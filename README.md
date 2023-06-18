@@ -6,5 +6,3 @@
 
 Critiques et ajouts bienvenus !
 
-# TODO
-Ajouter des environnements `\floatfigureleft` et `floatfigureright` permettant de légender les figures flottantes.
