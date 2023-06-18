@@ -1,0 +1,396 @@
+% Microtype (use LuaLaTeX for complete support)
+\RequirePackage{microtype}
+
+
+% Polyglossia: french
+\RequirePackage{polyglossia}
+
+\setdefaultlanguage{french}
+
+
+% Fonts: Fira and JetBrains Mono
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+
+\setromanfont[BoldFont={Fira Sans},ItalicFont={Fira Sans Light Italic}]{Fira Sans Light}
+\setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}
+\setmonofont[BoldFont={SourceCodePro-Regular},ItalicFont={SourceCodePro-LightIt}]{SourceCodePro-Light}[Scale=0.9]
+\setfontfamily{\titlefont}{Fira Sans ExtraBold}
+\setfontfamily{\boxfont}{Fira Sans Bold}
+\setfontfamily{\bigtitlefont}{Fira Sans ExtraBold}[Scale=4]
+
+
+% Colors
+\RequirePackage[table]{xcolor}
+
+\definecolor[named]{UGLiPurple}{HTML}{9F648C}
+\definecolor[named]{UGLiRed}{HTML}{cc2936}
+\definecolor[named]{UGLiOrange}{HTML}{eb8258}
+\definecolor[named]{UGLiYellow}{HTML}{CFB04A}
+\definecolor[named]{UGLiGreen}{HTML}{8FB349}
+\definecolor[named]{UGLiDarkGreen}{HTML}{248935}
+\definecolor[named]{UGLiBlue}{HTML}{267487}
+\definecolor[named]{UGLiDarkBlue}{HTML}{1F466D}
+
+
+% General text formatting
+\RequirePackage{colortbl}
+\RequirePackage{numprint}
+\RequirePackage{enumitem}
+
+\newcommand{\alternaterowcolors}[1][UGLiBlue]{\rowcolors[]{1}{#1!10}{#1!0}} % to alternate row colors inside tables
+\newcommand{\np}{\numprint}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.2}
+
+\newlist{enumalph}{enumerate}{1} % define a new list environment with lettered labels
+\setlist[enumalph]{label=\textbf{\alph*.},leftmargin=1.3em}
+\setlist[enumerate]{label=\textbf{\arabic*.},leftmargin=*} % beautify enumerate
+\setlist[itemize]{label=--,leftmargin=*} % beautify itemize
+
+
+% Boxes: Packages
+\RequirePackage[minted,most]{tcolorbox}
+\setminted{autogobble=true,breaklines=true}
+
+% Boxes: modubox (base box class)
+\newenvironment{modubox}[2]{
+  \begin{tcolorbox}[title={\color{#2}\boxfont #1},
+      colback=white, breakable,
+      boxrule=0pt,
+      colframe=white,
+      colbacktitle=white,
+      attach boxed title to top left={xshift=-3.4mm,yshift=.2mm},
+      frame hidden,
+      sharp corners,
+      enhanced,
+      borderline west={5pt}{1pt}{#2!50},
+      colback=white]
+    }
+    {\end{tcolorbox}}
+
+% Boxes: various code environments inheriting from modubox
+\newenvironment*{encadrecolore}[2]{\begin{modubox}{#1}{#2}}{
+\end{modubox}}
+
+\newenvironment*{pyc}{\begin{modubox}{Python}{UGLiPurple}}{
+  \end{modubox}}
+
+\newenvironment*{pys}{\begin{modubox}{Python}{UGLiPurple}}{
+  \end{modubox}}
+
+\newenvironment*{html}{\begin{modubox}{HTML}{UGLiGreen}}{
+  \end{modubox}}
+
+\newenvironment*{css}{\begin{modubox}{CSS}{UGLiOrange}}{
+  \end{modubox}}
+
+\newenvironment*{js}{\begin{modubox}{Javascript}{UGLiBlue}}{
+  \end{modubox}}
+
+\newenvironment*{cpp}{\begin{modubox}{C++}{UGLiOrange}}{
+  \end{modubox}}
+
+\newenvironment*{clang}{\begin{modubox}{C}{UGLiOrange}}{
+  \end{modubox}}
+
+% Boxes: various text environments inheriting from modubox
+\newenvironment*{definition}[1][]{\begin{modubox}{Définition#1}{UGLiGreen}}{\end{modubox}}
+
+\newenvironment*{notation}[1][]{\begin{modubox}{Notation#1}{UGLiBlue}}{\end{modubox}}
+
+\newenvironment*{exemple}[1][]{\begin{modubox}{Exemple#1}{UGLiBlue}}{\end{modubox}}
+
+
+\newenvironment*{propriete}[1][]{\begin{modubox}{Propriété#1}{UGLiRed}}{\end{modubox}}
+
+\newenvironment*{methode}[1][]{\begin{modubox}{Méthode#1}{UGLiPurple}}{\end{modubox}}
+
+\newenvironment*{remarque}[1][]{\begin{modubox}{Remarque#1}{UGLiBlue}}{\end{modubox}}
+
+\newenvironment*{aretenir}[1][]{\begin{modubox}{À retenir#1}{UGLiGreen}}{\end{modubox}}
+
+% Boxes: exo
+\newcounter{exonumber}
+\setcounter{exonumber}{0}
+\newenvironment*{exercice}[1][]{\stepcounter{exonumber}\begin{modubox}{Exercice \theexonumber #1
+    }{UGLiOrange}}{\end{modubox}}
+
+% Backwards compatibility with old versions
+\newcommand{\pythoninline}[1]{\mintinline{python}{#1}}
+\newcommand{\og}{«}
+\newcommand{\fg}{»}
+
+% General math
+\newcommand\barmin[1]{\overline{#1\vphantom{b}}\,}
+\newcommand\barmaj[1]{\overline{#1\vphantom{X}}}
+\newcommand\card{\textrm{Card}}
+\newenvironment{pmatrice}                                                     % Environnement pmatrice pour des écritures serrées
+{\renewcommand\arraystretch{0.7}\begin{pmatrix}}
+    {\end{pmatrix}\renewcommand\arraystretch{1}}
+\newcommand\repaff{\left(\ O \ ; \ I\ ; \ \ J\ \right)}								        % Point et coordonnées dans le plan
+\newcommand\rep{\left(O \ ; \ \vv{\imath}, \ \vv{\jmath}\right)}					    % Repère du plan
+\newcommand\repe{\left(O \ ; \ \vv{\imath}, \ \vv{\jmath}, \ \vv{k} \right)}	% Repère de l'espace
+
+\newcommand\pc[3]{#1\left( #2 \ ; \ #3 \right)}										            % Point et coordonnées dans le plan
+\newcommand\pcf[1]{\pc{#1}{x_{#1}}{y_{#1}}}											              % Point du plan et ses coordonnées dépendant du nom.
+\newcommand\pce[4]{\textrm{#1}\left( #2 \ ; \ #3 \ ; \ #4 \right)}					  % Idem dans l'espace
+\newcommand\pcfe[1]{\pc{#1}{x_{#1}}{y_{#1}}{z_{#1}}}								          % Idem
+
+\newcommand\vc[3]{\vv{#1}\begin{pmatrice} #2 \\ #3 \end{pmatrice}}					  % Vecteur du plan et coordonnées
+\newcommand\vce[4]{\vv{#1}\begin{pmatrice} #2 \\ #3 \\ #4 \end{pmatrice}}			% Vecteur de l'espace et coordonnées
+\newcommand\cc[2]{\begin{pmatrice} #1 \\ #2 \end{pmatrice}}							      % Coordonnées colonne
+\newcommand\cce[3]{\begin{pmatrice} #1 \\ #2 \\ #3 \end{pmatrice}}					  % Idem espace
+\newcommand\norme[1]{\| \vv{#1} \|}													                  % Norme
+\newcommand\ps[2]{\ensuremath{\vv{#1}\cdot\vv{#2}}}									          % Produit scalaire de deux vecteurs du plan
+\newcommand\anglo[2]{\left( \vv{#1}  , \ \vv{#2} \right)}                     % Angle orienté
+\newcommand\N{\ensuremath{\mathbf{N}}} 												                % Naturels
+\newcommand\Z{\ensuremath{\mathbf{Z}}} 												                % Relatifs
+\newcommand\D{\ensuremath{\mathbf{D}}} 												                % Décimaux
+\newcommand\Q{\ensuremath{\mathbf{Q}}}  											                % Rationnels
+\newcommand\R{\ensuremath{\mathbf{R}}} 												                % Réels
+\newcommand\C{\ensuremath{\mathbf{C}}}
+
+\newcommand\oio[2]{\left]#1\ ;\ #2\right[}											              % Intervalle borné ouvert
+\newcommand\oif[2]{\left]#1\ ;\ #2\right]}											              % Intervalle borné semi-ouvert semi-fermé
+\newcommand\fio[2]{\left[#1\ ;\ #2\right[}											              % Intervalle borné semi-fermé semi ouvert
+\newcommand\fif[2]{\left[#1\ ;\ #2\right]}											              % Intervalle borné fermé
+\newcommand\iif[1]{\left]-\infty\ ;\ #1\right]}										            % Coupure inférieure fermée
+\newcommand\iio[1]{\left]-\infty\ ;\ #1\right[}										            % Coupure inférieure ouverte
+\newcommand\fii[1]{\left[#1\ ;\ +\infty\right[}										            % Coupure supérieure fermée
+\newcommand\oii[1]{\left]#1\ ;\ +\infty\right[}										            % Coupure supérieure ouverte
+
+\newcommand{\e}{\textrm{e}}															                      % exponentielle
+\newcommand\courbe[1]{\ensuremath{\mathcal{C}_{#1}}}								          % C_f
+
+\newcommand\bis{$^{\textrm{\footnotesize bis}}$}									            % Bis
+\newcommand\eme{$^{\textrm{e}}$\ }                                            % ème
+\newcommand{\er}{$^{\textrm{er}}$\ }                                          % er
+\newcommand{\ere}{$^{\textrm{re}}$\ }                                         % ère
+
+
+
+
+\newcounter{questionnumber}
+\newcommand{\question}{\addtocounter{questionnumber}{1}\textbf{\thequestionnumber.~}}
+\newcommand{\resetquestion}{\setcounter{questionnumber}{0}}
+
+
+% \division[2]{n}
+% \afficheresultat
+
+\def\makeatletter{\catcode`\@11\relax}
+\def\makeatother{\catcode`\@12\relax}
+\makeatletter
+
+\def\@makeother#1{\catcode`#1=12\relax}
+
+\def\@ifnextchar#1#2#3{%
+  \let\reserved@d=#1%
+  \def\reserved@a{#2}\def\reserved@b{#3}%
+  \futurelet\@let@token\@ifnch}
+\def\@ifnch{%
+  \ifx\@let@token\@sptoken
+    \let\reserved@c\@xifnch
+  \else
+    \ifx\@let@token\reserved@d
+      \let\reserved@c\reserved@a
+    \else
+      \let\reserved@c\reserved@b
+    \fi
+  \fi
+  \reserved@c}
+\begingroup
+\def\:{\global\let\@sptoken= } \:  % this makes \@sptoken a space token
+\def\:{\@xifnch} \expandafter\gdef\: {\futurelet\@let@token\@ifnch}
+\endgroup
+
+
+\def\@ifstar#1{\@ifnextchar *{\@firstoftwo{#1}}}
+\long\def\@dblarg#1{\@ifnextchar[{#1}{\@xdblarg{#1}}}
+\long\def\@xdblarg#1#2{#1[{#2}]{#2}}
+
+\long\def \@gobble #1{}
+
+\long\def\@firstofone#1{#1}
+\long\def\@firstoftwo#1#2{#1}
+\long\def\@secondoftwo#1#2{#2}
+
+\let\@empty\empty
+
+\def\@carcube#1#2#3#4\@nil{#1#2#3}
+
+\def\@star@or@long#1{%
+  \@ifstar
+  {\let\l@ngrel@x\relax#1}%
+  {\let\l@ngrel@x\long#1}}
+
+\let\l@ngrel@x\relax
+\def\newcommand{\@star@or@long\new@command}
+\def\new@command#1{%
+  \@testopt{\@newcommand#1}0}
+\def\@newcommand#1[#2]{%
+\@ifnextchar [{\@xargdef#1[#2]}%
+  {\@argdef#1[#2]}}
+\long\def\@argdef#1[#2]#3{%
+  \@ifdefinable #1{\@yargdef#1\@ne{#2}{#3}}}
+\long\def\@xargdef#1[#2][#3]#4{%
+  \@ifdefinable#1{%
+    \expandafter\def\expandafter#1\expandafter{%
+      \expandafter
+      \@protected@testopt
+      \expandafter
+      #1%
+      \csname\string#1\expandafter\endcsname
+      {#3}}%
+    \expandafter\@yargdef
+    \csname\string#1\endcsname
+    \tw@
+    {#2}%
+    {#4}}}
+
+\def\@testopt#1#2{%
+  \@ifnextchar[{#1}{#1[#2]}}
+\def\@protected@testopt#1{%%
+  \ifx\protect\@typeset@protect
+    \expandafter\@testopt
+  \else
+    \@x@protect#1%
+  \fi}
+
+\long\def\@yargdef#1#2#3{%
+  \@tempcnta#3\relax
+  \advance \@tempcnta \@ne
+  \let\@hash@\relax
+  \edef\reserved@a{\ifx#2\tw@ [\@hash@1]\fi}%
+  \@tempcntb #2%
+  \@whilenum\@tempcntb <\@tempcnta
+  \do{%
+    \edef\reserved@a{\reserved@a\@hash@\the\@tempcntb}%
+    \advance\@tempcntb \@ne}%
+  \let\@hash@##%
+  \l@ngrel@x\expandafter\def\expandafter#1\reserved@a}
+\long\def\@reargdef#1[#2]#3{%
+  \@yargdef#1\@ne{#2}{#3}}
+
+\def\renewcommand{\@star@or@long\renew@command}
+\def\renew@command#1{%
+  {\escapechar\m@ne\xdef\@gtempa{{\string#1}}}%
+  \expandafter\@ifundefined\@gtempa
+  {\@latex@error{\string#1 undefined}\@ehc}%
+  {}%
+  \let\@ifdefinable\@rc@ifdefinable
+    \new@command#1}
+    \long\def\@ifdefinable #1#2{%
+      \edef\reserved@a{\expandafter\@gobble\string #1}%
+      \@ifundefined\reserved@a
+        {\edef\reserved@b{\expandafter\@carcube \reserved@a xxx\@nil}%
+          \ifx \reserved@b\@qend \@notdefinable\else
+            \ifx \reserved@a\@qrelax \@notdefinable\else
+              #2%
+            \fi
+          \fi}%
+        \@notdefinable}
+        \let\@@ifdefinable\@ifdefinable
+          \long\def\@rc@ifdefinable#1#2{%
+          \let\@ifdefinable\@@ifdefinable
+            #2}
+
+            \def\@ifundefined#1{%
+              \expandafter\ifx\csname#1\endcsname\relax
+                \expandafter\@firstoftwo
+              \else
+                \expandafter\@secondoftwo
+              \fi}
+
+              \newcount\@tempcnta
+              \newcount\@tempcntb
+
+              \long\def\@whilenum#1\do #2{\ifnum #1\relax #2\relax\@iwhilenum{#1\relax
+                    #2\relax}\fi}
+              \long\def\@iwhilenum#1{\ifnum #1\expandafter\@iwhilenum
+              \else\expandafter\@gobble\fi{#1}}
+              \long\def\@whiledim#1\do #2{\ifdim #1\relax#2\@iwhiledim{#1\relax#2}\fi}
+              \long\def\@iwhiledim#1{\ifdim #1\expandafter\@iwhiledim
+              \else\expandafter\@gobble\fi{#1}}
+              \long\def\@whilesw#1\fi#2{#1#2\@iwhilesw{#1#2}\fi\fi}
+        \long\def\@iwhilesw#1\fi{#1\expandafter\@iwhilesw
+    \else\@gobbletwo\fi{#1}\fi}
+\def\@nnil{\@nil}
+\def\@empty{}
+
+\ifx\@@input\@undefined
+  \let\@@input\input
+\fi
+
+\def\input{\@ifnextchar\bgroup\@iinput\@@input}
+\def\@iinput#1{\@@input#1 }
+\input{colordvi.tex}
+\newbox\nb@box
+\newcount\nb@a
+\newcount\nb@b
+\newcount\iter@
+\newcommand\division[2][2]{%
+  \def\dividende@{#2}\def\base@{#1}\iter@\@ne\division@{#2}{#1}}
+\newcommand\division@[2]{%
+  \setbox\nb@box\hbox{\kern0.5em#1\kern0.5em}%
+  \nb@a#1 \nb@b#1 \divide\nb@b#2
+  \vtop{%
+    \begingroup
+    \multiply\nb@b#2 \advance\nb@a-\nb@b
+    \hbox to\wd\nb@box{\hfil#1\hfil}%
+    \vskip3pt\hrule height0pt width\wd\nb@box\vskip3.4pt
+    \hbox to\wd\nb@box{\hfil\bf\Red{\number\nb@a}\kern0.5em}%
+    \expandafter\xdef\csname reste@\number\iter@\endcsname{\number\nb@a}%
+    \endgroup}%
+  \setbox\nb@box\hbox{8}\vrule height\ht\nb@box depth3.5ex
+  \setbox\nb@box\hbox{\kern0.5em\ifnum#2>\nb@b #2\else\number\nb@b\fi\kern0.5em}%
+  \vtop{%
+    \hbox to\wd\nb@box{\kern0.5em#2\hfil}%
+    \vskip3pt\hrule height0.4pt width\wd\nb@box\vskip3pt
+    \hbox{%
+      \csname @\ifnum\nb@b>\z@ first\else second\fi oftwo\endcsname
+      {\advance\iter@\@ne\gdef\maxiter{\number\iter@}%
+        \expandafter\division@\expandafter{\number\nb@b}{#2}}%
+      {\kern0.5em\number\nb@b\xdef\maxiter{\number\iter@}}}}}
+
+\newcommand\afficheresultat{$(\dividende@)_{10}=(\afficheresultat@\maxiter)_{\base@}$}
+\newcommand\afficheresultat@[1]{%
+\csname reste@#1\endcsname
+\ifnum#1>\@ne
+  \expandafter\expandafter\expandafter\afficheresultat@
+\else
+  \expandafter\@gobble
+\fi{\number\numexpr#1-1}}
+\makeatother
+
+%\floatpictureright{fraction}{imagefile}{text}
+\newlength{\colOne}
+\newlength{\colTwo}
+\newlength{\gutter}
+\setlength{\gutter}{2em}
+\newcommand{\floatpictureright}[3]{
+  \setlength{\colTwo}{\dimexpr#1\textwidth}
+  \setlength{\colOne}{\dimexpr\textwidth-\colTwo-\gutter\relax}
+  \noindent\begin{minipage}{\colOne}
+  #3
+  \end{minipage}
+  \hspace{\gutter}
+  \begin{minipage}{\colTwo}
+  \includegraphics[width=\colTwo]{#2}
+  \end{minipage}
+}
+%\floatpictureleft{fraction}{imagefile}{text}
+\newcommand{\floatpictureleft}[3]{
+  \setlength{\colOne}{\dimexpr#1\textwidth}
+  \setlength{\colTwo}{\dimexpr\textwidth-\colOne-\gutter\relax}
+  \noindent\begin{minipage}{\colOne}
+  \includegraphics[width=\colOne]{#2}
+  \end{minipage}
+  \hspace{\gutter}
+  \begin{minipage}{\colTwo}
+  #3
+  \end{minipage}
+}
+
+
