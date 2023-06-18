@@ -5,3 +5,6 @@
 - pour tirer pleinement partie du package `microtype` il faut compiler avec `lualatex` et pour utiliser `minted` il faut ajouter l'option `-shell-escape`. Cela donne quelque chose comme `lualatex -shell-escape cours.tex`.
 
 Critiques et ajouts bienvenus !
+
+# TODO
+Ajouter des environnements `\floatfigureleft` et `floatfigureright` permettant de légender les figures flottantes.
