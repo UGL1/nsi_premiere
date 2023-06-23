@@ -103,46 +103,7 @@ Pour finir, la \textit{division décimale} peut être effectuée sur des entiers
 \end{minted}
 \end{pys}
 
-\section{Le type float}
-Le type \pythoninline{float} sert à représenter les \textit{nombres à virgule flottante} (\textit{to float} : flotter en Anglais). Ce sont (en gros) des nombres
-décimaux. \textsc{Python} comprend et utilise la notation scientifique : \pythoninline{2.35e6} vaut $2,35\times 10^6$, c'est-à-dire 2 350 000.
 
-\begin{pys}\begin{minted}{python}
->>> a = float()
->>> a
-0.0
->>> b = 3 / 2
->>> b
-1.5
->>> c = 1 / 100_000
->>> c
-1e-05
->>> d = 1.2e-4
->>> d
-0.00012
-\end{minted}
-\end{pys}
-
-On peut pratiquer sur les \pythoninline{float} toutes les opérations vues avec les \pythoninline{int}. Pour des fonctions plus compliquées telles le cosinus ou
-l'exponentielle, on fait appel au module\footnote{Un module est un ensemble de \textit{fonctions} et/ou de \textit{constantes} que l'on peut importer si besoin est.}
-\pythoninline{math} :
-
-\begin{pys}\begin{minted}{python}
->>> from math import *
->>> pi
->>> cos(pi / 3)
-0.5000000000000001
->>> exp(2)
-7.38905609893065
->>> log(2)
-0.6931471805599453
->>> exp(log(2))
-2.0
-\end{minted}
-\end{pys}
-
-Ce que \textsc{Python} note \pythoninline{log} est la \textit{fonction logarithme népérien}\footnote{Voir le programme de mathématiques
-    de terminale scientifique.} notée ln en France.
 \section{Le type str}
 
 Le type \pythoninline{str} pour représenter les \textit{chaînes de caractères} (\pythoninline{str} est l'abréviation de \emph{string}, qui veut dire chaîne en anglais).
