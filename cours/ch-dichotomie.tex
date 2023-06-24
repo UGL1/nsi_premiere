@@ -30,7 +30,7 @@ On compare \mintinline{python}{val} avec l'élément $m$ qui se situe \og à peu
     \item   sinon si $val>m$ on recommence avec la liste des éléments situés après $m$.
     \item   sinon c'est que $val<m$ et on recommence avec la liste des éléments situés avant $m$.
 \end{itemize}
-On itère ce procédé tant que la liste des valeurs à examiner n'est pas vide. Si on arrive à une liste vide c'est que \mintinline{python}{val} , n'est pas dans \mintinline{python}{liste_triee}
+On itère ce procédé tant que la liste des valeurs à examiner n'est pas vide. Si on arrive à une liste vide c'est que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee}
 \end{methode}
 Voici l'algorithme traduit en \textsc{Python} :
 \begin{pys}
@@ -57,7 +57,7 @@ Trois question se posent :
 
 \begin{enumerate}
     \item   Pourquoi la boucle \textit{tant que} s'arrête-t-elle toujours ?\\ On dit que c'est un problème de \textit{terminaison}.
-    \item   Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \mintinline{python}{val==liste_triee[m]} ?.\\
+    \item   Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \mintinline{python}{val==liste_triee[m]} ?\\
     C'est un problème de \textit{correction}.
     \item   Pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?\\ C'est un problème de \textit{complexité}
 \end{enumerate}
