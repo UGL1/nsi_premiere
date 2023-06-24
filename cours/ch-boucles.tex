@@ -11,7 +11,7 @@ Voici son schéma de fonctionnement :
     \includegraphics[scale=0.2]{img/while.png}
 \end{center}
 
-La boucle \pythoninline{while} exécute un bloc d'instructions conditionnel \textit{tant que} une condition est vérifiée.\\
+La boucle \mintinline{python}{while} exécute un bloc d'instructions conditionnel \textit{tant que} une condition est vérifiée.\\
 Dès que la condition n'est plus vérifiée, le bloc conditionnel n'est plus exécuté.
 
 \begin{pys}
@@ -23,7 +23,7 @@ while reponse !='n':
 print('Au revoir.')
 \end{minted}
 \end{pys}
-Les boucles \pythoninline{while} doivent être utilisées avec soin : si la condition est toujours vérifiée, le programme ne s'arrêtera pas :
+La boucle \mintinline{python}{while} doit être utilisée avec soin : si la condition est toujours vérifiée, le programme ne s'arrêtera pas :
 
 \begin{pyc}
 \begin{minted}{python}
@@ -31,14 +31,14 @@ while True:
     print('Au secours !')
 \end{minted}
 \end{pyc}
-Voici un exemple typique d'utilisation de la boucle \pythoninline{while} : \\
+Voici un exemple typique d'utilisation de la boucle \mintinline{python}{while} : \\
 
 On place un capital de 2000 euros sur un compte à intérêts annuels de 2\%. On aimerait savoir au bout de combien de temps, sans rien toucher, le 
 solde du compte dépassera 2300 euros.\\
 
 \begin{pyc}
 \begin{minted}{python}
- solde = 2000  # solde initial
+solde = 2000  # solde initial
 n = 0  # nombre d'annees
 while solde <= 2300:  # condition de boucle
     n += 1  # augmente le compteur d'annees
@@ -49,7 +49,7 @@ print(' Il nous faudra ', n, 'ans.')  # affichage final
 
 \section{La boucle for ... in range(...)}
 
-Commençons examiner un nouveau type : \pythoninline{range} (plage de valeurs)
+Commençons par examiner un nouveau type : \mintinline{python}{range} (plage de valeurs)
 
 \begin{pys}
 \begin{minted}{python}
@@ -59,7 +59,7 @@ Commençons examiner un nouveau type : \pythoninline{range} (plage de valeurs)
 \end{minted}
 \end{pys}
 
-Si \pythoninline{range(10)} ressemble beaucoup à la liste \pythoninline{[0,1,...,9]}, la finalité de \\\pythoninline{range(10)} est d'être un \textit{itérateur}, 
+Si \mintinline{python}{range(10)} ressemble beaucoup à la liste \mintinline{python}{[0,1,...,9]}, la finalité de \\\mintinline{python}{range(10)} est d'être un \textit{itérateur}, 
 c'est-à-dire une objet dont on peut parcourir le contenu pour créer une boucle :
 
 \begin{pyc}
@@ -68,21 +68,21 @@ for i in range(10):
     print(i)
 \end{minted}
 \end{pyc}
-La syntaxe complète de \pythoninline{range} est : \pythoninline{range(<debut>,fin,<increment>)}.\\
+La syntaxe complète de \mintinline{python}{range} est : \mintinline{python}{range(<debut>,fin,<increment>)}.\\
 
-Par défaut, si ce n'est pas précisé, \pythoninline{debut=0}, et \pythoninline{increment=1}.\\
+Par défaut, si ce n'est pas précisé, \mintinline{python}{debut=0}, et \mintinline{python}{increment=1}.\\
 
-\pythoninline{range(<debut>,fin,<increment>)} renvoie la plage de valeurs suivantes :
+\mintinline{python}{range(<debut>,fin,<increment>)} renvoie la plage de valeurs suivantes :
 \begin{itemize}
-    \item   On part de la valeur de début, appelons la \pythoninline{val}
-    \item   Tant que \pythoninline{val < fin}:\\
-    $\qquad$ - ajouter \pythoninline{val} à la plage\\
-    $\qquad$ - ajouter \pythoninline{increment} à \pythoninline{val}
+    \item   On part de la valeur de début, appelons la \mintinline{python}{val}
+    \item   Tant que \mintinline{python}{val < fin}:\\
+    $\qquad$ - ajouter \mintinline{python}{val} à la plage\\
+    $\qquad$ - ajouter \mintinline{python}{increment} à \mintinline{python}{val}
 \end{itemize}
-Ainsi, \pythoninline{range(2,52,10}) renvoie la plage de valeurs \pythoninline{2,12,22,32,42}, mais\\ \pythoninline{range(2,53,10}) renvoie la plage de valeurs 
-\pythoninline{2,12,22,32,42,52}.\\
+Ainsi, \mintinline{python}{range(2,52,10}) renvoie la plage de valeurs \mintinline{python}{2,12,22,32,42}, mais\\ \mintinline{python}{range(2,53,10}) renvoie la plage de valeurs 
+\mintinline{python}{2,12,22,32,42,52}.\\
 
-Très souvent, on se contente d'utiliser une instruction du type \pythoninline{range(n)}, où \pythoninline{n} est de type \pythoninline{int}.\\
+Très souvent, on se contente d'utiliser une instruction du type \mintinline{python}{range(n)}, où \mintinline{python}{n} est de type \mintinline{python}{int}.\\
 
 
 Voici un exemple : Calculons $1+2+\ldots+100$ :
@@ -98,8 +98,8 @@ print(somme)
 
 \section{La boucle for ... in ...}
 
-On peut généraliser le paragraphe précédent à toute \textit{variable itérable}, c'est extrêmement puissant : les \pythoninline{str}, les \pythoninline{list} et les 
-\pythoninline{dict} sont des types itérables.\\
+On peut généraliser le paragraphe précédent à toute \textit{variable itérable}, c'est extrêmement puissant : les \mintinline{python}{str}, les \mintinline{python}{list} et les 
+\mintinline{python}{dict} sont des types itérables.\\
 
 Voici des exemples :\\
 
@@ -131,10 +131,10 @@ print(moyenne)
 \end{minted}
 \end{pyc}
 
-Pour le dernier exemple on utilise le type \pythoninline{dict} : soit \pythoninline{a} une variable de ce type :
+Pour le dernier exemple on utilise le type \mintinline{python}{dict} : soit \mintinline{python}{a} une variable de ce type :
 \begin{itemize}
-    \item   \pythoninline{a.keys()} renvoie la liste des clés (des indices du dictionnaire).
-    \item   \pythoninline{a.values()} renvoie la liste des valeurs prises par le dictionnaire.
+    \item   \mintinline{python}{a.keys()} renvoie la liste des clés (des indices du dictionnaire).
+    \item   \mintinline{python}{a.values()} renvoie la liste des valeurs prises par le dictionnaire.
 \end{itemize}
 
 Voici un second programme de moyenne :
@@ -152,12 +152,12 @@ print(moyenne)
 
 \section{Quelle boucle utiliser ?}
 
-Si la boucle dépend d'une condition particulière on préfèrera la boucle \pythoninline{while}.
+Si la boucle dépend d'une condition particulière on préfèrera la boucle \mintinline{python}{while}.
 
-Si le nombre d'itérations de la boucle est connu on préfèrera une boucle \pythoninline{for}.
+Si le nombre d'itérations de la boucle est connu on préfèrera une boucle \mintinline{python}{for}.
 
-On peut utiliser une boucle \pythoninline{for} sur toute \textit{structure itérative}, par exemple 
-    une variable de type \pythoninline{range}, \pythoninline{str}, \pythoninline{list} ou, dans une certaine mesure, \pythoninline{dict}.
+On peut utiliser une boucle \mintinline{python}{for} sur toute \textit{structure itérative}, par exemple 
+    une variable de type \mintinline{python}{range}, \mintinline{python}{str}, \mintinline{python}{list} ou, dans une certaine mesure, \mintinline{python}{dict}.
     
 \section{Exercices}
 \begin{exercice}
@@ -172,7 +172,7 @@ On peut utiliser une boucle \pythoninline{for} sur toute \textit{structure itér
 %---------------------------------------------------------------------
 \begin{exercice}
     \'Ecrire un script qui demande une phrase à l'utilisateur, puis affiche la phrase en rajoutant des tirets.\\
-    Exemple : on entre \pythoninline{'Salut à toi'} le script affiche \pythoninline{'S-a-l-u-t- -à- -t-o-i-}.
+    Exemple : on entre \mintinline{python}{'Salut à toi'} le script affiche \mintinline{python}{'S-a-l-u-t- -à- -t-o-i-}.
 \end{exercice}
 
 \begin{exercice}
@@ -189,8 +189,8 @@ On peut utiliser une boucle \pythoninline{for} sur toute \textit{structure itér
     Programmer le jeu du "plus petit plus grand" :
     \begin{itemize}
         \item   L'ordinateur choisit un nombre entier au hasard compris entre 0 et 100.\\
-        Au début du script, importer la fonction \pythoninline{randint} du module \pythoninline{random} avec \pythoninline{form random import randint}.\\
-        Pour obtenir un entier au hasard, utiliser \pythoninline{randint(0,100)}.
+        Au début du script, importer la fonction \mintinline{python}{randint} du module \mintinline{python}{random} avec \mintinline{python}{form random import randint}.\\
+        Pour obtenir un entier au hasard, utiliser \mintinline{python}{randint(0,100)}.
         \item   L'utilisateur propose un nombre, l'ordinateur répond \og gagné\fg, \og plus petit\fg{} ou \og plus grand\fg.
         \item   Le programme continue tant que l'utilisateur n'a pas gagné.
     \end{itemize}

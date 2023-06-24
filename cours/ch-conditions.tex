@@ -11,25 +11,25 @@ Ce sont les \textit{opérateurs de comparaison} :\\
 	\rowcolor{lightgray}
 	\rowcolor{UGLiOrange}{\boxfont\color{white} Opérateur} & {\boxfont\color{white} Signification} & {\boxfont\color{white} Remarques}                                                                     \\
 
-	\pythoninline{<}                                       & strictement inférieur                 & Ordre usuel sur \pythoninline{int} et \pythoninline{float}, lexicographique sur \pythoninline{str}... \\
+	\mintinline{python}{<}                                       & strictement inférieur                 & Ordre usuel sur \mintinline{python}{int} et \mintinline{python}{float}, lexicographique sur \mintinline{python}{str}... \\
 
-	\pythoninline{<=}                                      & inférieur ou égal                     & Idem                                                                                                  \\
+	\mintinline{python}{<=}                                      & inférieur ou égal                     & Idem                                                                                                  \\
 
-	\pythoninline{>}                                       & strictement supérieur                 & Idem                                                                                                  \\
+	\mintinline{python}{>}                                       & strictement supérieur                 & Idem                                                                                                  \\
 
-	\pythoninline{>=}                                      & supérieur ou égal                     & Idem                                                                                                  \\
+	\mintinline{python}{>=}                                      & supérieur ou égal                     & Idem                                                                                                  \\
 
-	\pythoninline{==}                                      & égal                                  & \og avoir même valeur\fg\  \textit{Attention :} deux signes =                                         \\
+	\mintinline{python}{==}                                      & égal                                  & \og avoir même valeur\fg\  \textit{Attention :} deux signes =                                         \\
 
-	\pythoninline{!=}                                      & différent                             &                                                                                                       \\
+	\mintinline{python}{!=}                                      & différent                             &                                                                                                       \\
 
-	\pythoninline{is}                                      & identique                             & être le même objet                                                                                    \\
+	\mintinline{python}{is}                                      & identique                             & être le même objet                                                                                    \\
 
-	\pythoninline{is not}                                  & non identique                         &                                                                                                       \\
+	\mintinline{python}{is not}                                  & non identique                         &                                                                                                       \\
 
-	\pythoninline{in}                                      & appartient à                          & avec \pythoninline{str}, \pythoninline{list} et \pythoninline{dict}                                   \\
+	\mintinline{python}{in}                                      & appartient à                          & avec \mintinline{python}{str}, \mintinline{python}{list} et \mintinline{python}{dict}                                   \\
 
-	\pythoninline{not in}                                  & n'appartient pas à                    & avec \pythoninline{str} et \pythoninline{list} et \pythoninline{dict}                                 \\
+	\mintinline{python}{not in}                                  & n'appartient pas à                    & avec \mintinline{python}{str} et \mintinline{python}{list} et \mintinline{python}{dict}                                 \\
 \end{tabular}
 }\normalsize
 
@@ -63,33 +63,33 @@ Ces opérateurs permettent de réaliser des tests basiques. Pour des tests plus 
 \section{Les connecteurs logiques}
 
 \begin{itemize}
-	\item   \pythoninline{and} permet de vérifier que 2 conditions sont \textit{vérifiées simultanément}.
-	\item   \pythoninline{or} permet de vérifier qu'\textit{au moins une} des deux conditions est vérifiée.
-	\item   \pythoninline{not} est un opérateur de \textit{négation} très utile quand on veut par exemple vérifier qu'une condition est fausse.
+	\item   \mintinline{python}{and} permet de vérifier que 2 conditions sont \textit{vérifiées simultanément}.
+	\item   \mintinline{python}{or} permet de vérifier qu'\textit{au moins une} des deux conditions est vérifiée.
+	\item   \mintinline{python}{not} est un opérateur de \textit{négation} très utile quand on veut par exemple vérifier qu'une condition est fausse.
 \end{itemize}
 Voici les tables de vérité des deux premiers connecteurs :
 
 \begin{center}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\pythoninline{and} & \textit{True}        & \textit{False}       \\
+		\mintinline{python}{and} & \textit{True}        & \textit{False}       \\
 		\hline
-		\textit{True}      & \pythoninline{True}  & \pythoninline{False} \\
+		\textit{True}      & \mintinline{python}{True}  & \mintinline{python}{False} \\
 		\hline
-		\textit{False}     & \pythoninline{False} & \pythoninline{False} \\
+		\textit{False}     & \mintinline{python}{False} & \mintinline{python}{False} \\
 		\hline
 	\end{tabular}\hspace{2em}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\pythoninline{or} & \textit{True}       & \textit{False}       \\
+		\mintinline{python}{or} & \textit{True}       & \textit{False}       \\
 		\hline
-		\textit{True}     & \pythoninline{True} & \pythoninline{True}  \\
+		\textit{True}     & \mintinline{python}{True} & \mintinline{python}{True}  \\
 		\hline
-		\textit{False}    & \pythoninline{True} & \pythoninline{False} \\
+		\textit{False}    & \mintinline{python}{True} & \mintinline{python}{False} \\
 		\hline
 	\end{tabular}
 \end{center}
-À ceci on peut ajouter que \pythoninline{not True} vaut \pythoninline{False} et vice-versa.
+À ceci on peut ajouter que \mintinline{python}{not True} vaut \mintinline{python}{False} et vice-versa.
 
 \begin{pys}
 	\begin{minted}{python}
@@ -108,12 +108,12 @@ Voici les tables de vérité des deux premiers connecteurs :
 \end{pys}
 
 \section{if, else et elif}
-Voici le schéma de fonctionnement d'un test \pythoninline{if} :
+Voici le schéma de fonctionnement d'un test \mintinline{python}{if} :
 \begin{center}
 	\includegraphics[height=10cm]{img/if}
 \end{center}
 
-\textbf{Attention :} Un bloc conditionnel doit être \textit{tabulé} par rapport à la ligne précédente : il n'y a ni \pythoninline{DébutSi}  ni \pythoninline{FinSi}
+\textbf{Attention :} Un bloc conditionnel doit être \textit{tabulé} par rapport à la ligne précédente : il n'y a ni \mintinline{python}{DébutSi}  ni \mintinline{python}{FinSi}
 en \textsc{Python}, ce sont les tabulations qui délimitent les blocs.
 
 \begin{pyc}
@@ -127,7 +127,7 @@ print(phrase)
 \end{minted}
 \end{pyc}
 
-Voici le schéma de fonctionnement d'un test \pythoninline{if...else} :
+Voici le schéma de fonctionnement d'un test \mintinline{python}{if...else} :
 \begin{center}
 	\includegraphics[height=10cm]{img/ifelse}
 \end{center}
@@ -144,7 +144,7 @@ print('Au revoir.')
 \end{minted}
 \end{pyc}
 
-Voici un exemple de fonctionnement d'un test \pythoninline{if...elif...} :
+Voici un exemple de fonctionnement d'un test \mintinline{python}{if...elif...} :
 \begin{pyc}
 	\begin{minted}{python}
 print('Bonjour')
@@ -167,13 +167,13 @@ Et voici un schéma décrivant son fonctionnement :
 
 
 
-On peut bien sûr inclure autant de \pythoninline{elif} que nécessaire.
+On peut bien sûr inclure autant de \mintinline{python}{elif} que nécessaire.
 
 \section{Exercices}
 
 %----------------------------------------------------------------------
 \begin{exercice}
-	\'Ecrire un script qui demande son âge à l'utilisateur puis qui affiche \pythoninline{'Bravo pour votre longévité.'} si celui-ci est supérieur à 90.
+	\'Ecrire un script qui demande son âge à l'utilisateur puis qui affiche \mintinline{python}{'Bravo pour votre longévité.'} si celui-ci est supérieur à 90.
 \end{exercice}
 
 \begin{exercice}[]
@@ -193,7 +193,7 @@ On peut bien sûr inclure autant de \pythoninline{elif} que nécessaire.
 %----------------------------------------------------------------------
 
 \begin{exercice}
-	\'Ecrire un script qui demande une note sur 20 à l'utilisateur puis vérifie qu'elle est bien comprise entre 0 et 20. Si c'est le cas rien ne se produit mais sinon le programme devra afficher un message tel que \pythoninline{'Note non valide.'}.
+	\'Ecrire un script qui demande une note sur 20 à l'utilisateur puis vérifie qu'elle est bien comprise entre 0 et 20. Si c'est le cas rien ne se produit mais sinon le programme devra afficher un message tel que \mintinline{python}{'Note non valide.'}.
 \end{exercice}
 
 \begin{exercice}
@@ -208,7 +208,7 @@ On peut bien sûr inclure autant de \pythoninline{elif} que nécessaire.
 %----------------------------------------------------------------------
 \begin{exercice}
 	\'Ecrire un script qui résout dans $\R$ l'équation du second degré $ax^2+bx+c=0$.\\
-	On commencera par \pythoninline{from math import sqrt} pour utiliser la fonction \pythoninline{sqrt}, qui calcule la racine carrée d'un \pythoninline{float}.
+	On commencera par \mintinline{python}{from math import sqrt} pour utiliser la fonction \mintinline{python}{sqrt}, qui calcule la racine carrée d'un \mintinline{python}{float}.
 
 	On rappelle que lorsqu'on considère une équation du type $ax^2+bx+c=0$
 	\begin{itemize}
@@ -230,24 +230,24 @@ On peut bien sûr inclure autant de \pythoninline{elif} que nécessaire.
 
 %----------------------------------------------------------------------
 \begin{exercice}
-	L'opérateur \pythoninline{nand} est défini de la manière suivante : si \pythoninline{A} et \pythoninline{B} sont deux booléens alors
+	L'opérateur \mintinline{python}{nand} est défini de la manière suivante : si \mintinline{python}{A} et \mintinline{python}{B} sont deux booléens alors
 	\begin{center}
-		\pythoninline{A nand B} vaut \pythoninline{not (A and B)}
+		\mintinline{python}{A nand B} vaut \mintinline{python}{not (A and B)}
 	\end{center}
-	Construire la table de vérité de \pythoninline{nand} en complétant :
+	Construire la table de vérité de \mintinline{python}{nand} en complétant :
 	\begin{center}
 
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			\rowcolor{UGLiOrange}{\boxfont\color{white} A} & {\boxfont\color{white} B} & {\boxfont\color{white} A and B} & {\boxfont\color{white} not (A and B)} \\
 			\hline
-			\pythoninline{False}                           & \pythoninline{False}      &                                 &                                       \\
+			\mintinline{python}{False}                           & \mintinline{python}{False}      &                                 &                                       \\
 			\hline
-			\pythoninline{False}                           & \pythoninline{True}       &                                 &                                       \\
+			\mintinline{python}{False}                           & \mintinline{python}{True}       &                                 &                                       \\
 			\hline
-			\pythoninline{True}                            & \pythoninline{False}      &                                 &                                       \\
+			\mintinline{python}{True}                            & \mintinline{python}{False}      &                                 &                                       \\
 			\hline
-			\pythoninline{True}                            & \pythoninline{True}       &                                 &                                       \\
+			\mintinline{python}{True}                            & \mintinline{python}{True}       &                                 &                                       \\
 			\hline
 		\end{tabular}
 	\end{center}

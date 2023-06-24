@@ -7,30 +7,30 @@ Lorsqu'on dispose d'une liste d'éléments et d'un élément particulier, on peu
 On veut écrire une fonction \texttt{recherche\_dichotomique} qui :
 \begin{itemize}
     \item   En entrée prend \begin{itemize}
-                                \item   une liste \pythoninline{liste_triee} de $n$ entiers \textit{triée dans l'ordre croissant};
-                                \item   un entier \pythoninline{val}.
+                                \item   une liste \mintinline{python}{liste_triee} de $n$ entiers \textit{triée dans l'ordre croissant};
+                                \item   un entier \mintinline{python}{val}.
                             \end{itemize}
     \item  Renvoie \begin{itemize}
-                        \item   l'indice de \pythoninline{val} dans \pythoninline{liste_triee} si \pythoninline{val} appartient à \pythoninline{liste_triee};
-                        \item   -1 si a n'appartient pas à \pythoninline{liste_triee}.
+                        \item   l'indice de \mintinline{python}{val} dans \mintinline{python}{liste_triee} si \mintinline{python}{val} appartient à \mintinline{python}{liste_triee};
+                        \item   -1 si a n'appartient pas à \mintinline{python}{liste_triee}.
                     \end{itemize} 
 \end{itemize}
 
 \begin{exemple}[]
 \begin{itemize}
-    \item   \pythoninline{recherche_dichotomique([11, 20, 32, 33, 54], 32)} \\renvoie 2 car 32 est l'élément d'indice 2 de la liste.
-    \item   \pythoninline{recherche_dichotomique([20, 32, 33, 54], 40)} \\renvoie -1 car 40 ne figure pas dans la liste.
+    \item   \mintinline{python}{recherche_dichotomique([11, 20, 32, 33, 54], 32)} \\renvoie 2 car 32 est l'élément d'indice 2 de la liste.
+    \item   \mintinline{python}{recherche_dichotomique([20, 32, 33, 54], 40)} \\renvoie -1 car 40 ne figure pas dans la liste.
 \end{itemize}
 \end{exemple}
 
 \begin{methode}[]
-On compare \pythoninline{val} avec l'élément $m$ qui se situe \og à peu près au milieu de \pythoninline{liste_triee}\fg{}.
+On compare \mintinline{python}{val} avec l'élément $m$ qui se situe \og à peu près au milieu de \mintinline{python}{liste_triee}\fg{}.
 \begin{itemize}
-    \item   si $val$ est égal à $m$ c'est gagné, on renvoie l'indice de $m$ dans  \pythoninline{liste_triee};
+    \item   si $val$ est égal à $m$ c'est gagné, on renvoie l'indice de $m$ dans  \mintinline{python}{liste_triee};
     \item   sinon si $val>m$ on recommence avec la liste des éléments situés après $m$.
     \item   sinon c'est que $val<m$ et on recommence avec la liste des éléments situés avant $m$.
 \end{itemize}
-On itère ce procédé tant que la liste des valeurs à examiner n'est pas vide. Si on arrive à une liste vide c'est que \pythoninline{val} , n'est pas dans \pythoninline{liste_triee}
+On itère ce procédé tant que la liste des valeurs à examiner n'est pas vide. Si on arrive à une liste vide c'est que \mintinline{python}{val} , n'est pas dans \mintinline{python}{liste_triee}
 \end{methode}
 Voici l'algorithme traduit en \textsc{Python} :
 \begin{pys}
@@ -57,7 +57,7 @@ Trois question se posent :
 
 \begin{enumerate}
     \item   Pourquoi la boucle \textit{tant que} s'arrête-t-elle toujours ?\\ On dit que c'est un problème de \textit{terminaison}.
-    \item   Quand la fonction renvoie -1, est-ce que cela veut bien dire que \pythoninline{val} n'est pas dans \pythoninline{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \pythoninline{val==liste_triee[m]} ?.\\
+    \item   Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \mintinline{python}{val==liste_triee[m]} ?.\\
     C'est un problème de \textit{correction}.
     \item   Pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?\\ C'est un problème de \textit{complexité}
 \end{enumerate}
@@ -70,23 +70,23 @@ Pour prouver qu'une boucle \textit{tant que} se termine, on détermine un \texti
 Un variant de boucle est un \textit{entier positif qui décroît strictement à chaque itération de boucle}. On le choisit de sorte à ce que lorsqu'il atteint zéro (ou un, en tout cas une petite valeur) la boucle se termine.\\
 \end{definition}
 
-Dans notre cas, le variant de boucle est l'entier \pythoninline{v} défini par \pythoninline{v = droite-gauche} :
+Dans notre cas, le variant de boucle est l'entier \mintinline{python}{v} défini par \mintinline{python}{v = droite-gauche} :
 \begin{itemize}
-    \item   la condition du \pythoninline{while} est liée à \pythoninline{v} puisqu'elle se réécrit \pythoninline{while v >= 0};
-    \item   quand on rentre dans la boucle on définit \pythoninline{milieu} et on a toujours \\
-    \pythoninline{gauche <= milieu <= droite};
-    \item   si \pythoninline{ liste_triee[milieu] == val} alors la boucle s'arrête.
+    \item   la condition du \mintinline{python}{while} est liée à \mintinline{python}{v} puisqu'elle se réécrit \mintinline{python}{while v >= 0};
+    \item   quand on rentre dans la boucle on définit \mintinline{python}{milieu} et on a toujours \\
+    \mintinline{python}{gauche <= milieu <= droite};
+    \item   si \mintinline{python}{ liste_triee[milieu] == val} alors la boucle s'arrête.
         
-    \item   sinon si \pythoninline{ liste_triee[milieu] > val} alors :\\
-            \pythoninline{droite = milieu - 1} et donc\\
-            \pythoninline{v} devient (appelons-le \texttt{v2} temporairement) \pythoninline{v2 = milieu - 1 - gauche} donc\\
-            \pythoninline{v2 < milieu - gauche} et puisque \pythoninline{milieu <= droite} on a\\
-            \pythoninline{v2 < droite - gauche} et ainsi \pythoninline{v2 < v}.
-    \item   sinon \pythoninline{ liste_triee[milieu] < val} et à ce moment :\\
-            \pythoninline{gauche = milieu + 1} et donc\\
-            \pythoninline{v} devient (appelons-le \texttt{v2} temporairement) \pythoninline{v2 = droite - (milieu+1)} donc\\
-            \pythoninline{v2 < droite - milieu} et puisque \pythoninline{gauche <= milieu } on a\\
-            \pythoninline{v2 < droite - gauche} et ainsi \pythoninline{v2 < v}.         
+    \item   sinon si \mintinline{python}{ liste_triee[milieu] > val} alors :\\
+            \mintinline{python}{droite = milieu - 1} et donc\\
+            \mintinline{python}{v} devient (appelons-le \texttt{v2} temporairement) \mintinline{python}{v2 = milieu - 1 - gauche} donc\\
+            \mintinline{python}{v2 < milieu - gauche} et puisque \mintinline{python}{milieu <= droite} on a\\
+            \mintinline{python}{v2 < droite - gauche} et ainsi \mintinline{python}{v2 < v}.
+    \item   sinon \mintinline{python}{ liste_triee[milieu] < val} et à ce moment :\\
+            \mintinline{python}{gauche = milieu + 1} et donc\\
+            \mintinline{python}{v} devient (appelons-le \texttt{v2} temporairement) \mintinline{python}{v2 = droite - (milieu+1)} donc\\
+            \mintinline{python}{v2 < droite - milieu} et puisque \mintinline{python}{gauche <= milieu } on a\\
+            \mintinline{python}{v2 < droite - gauche} et ainsi \mintinline{python}{v2 < v}.         
 \end{itemize}
 
 Ainsi les valeurs de v décroissent strictement, donc finissent (si on ne trouve pas \texttt{val}) par atteindre zéro et la boucle se termine.\\
@@ -108,26 +108,26 @@ Un \textit{invariant de boucle} est une propriété P dépendant éventuellement
 
 Dans notre cas voici l'invariant de boucle :
 \begin{center}
-P : \og si \pythoninline{val} est dans \pythoninline{liste_triee} son indice ne peut-être qu'entre \pythoninline{gauche} et \pythoninline{droite}\fg{}
+P : \og si \mintinline{python}{val} est dans \mintinline{python}{liste_triee} son indice ne peut-être qu'entre \mintinline{python}{gauche} et \mintinline{python}{droite}\fg{}
 \end{center}
 
 \begin{itemize}
-    \item   avant l'entrée dans la boucle \pythoninline{while}, on a\\
-     \pythoninline{gauche = 0} et \pythoninline{droite = len(liste_triee)-1} donc P est trivialement vérifiée;
-    \item   dans la boucle, si  \pythoninline{liste_triee[milieu] == val} alors on renvoie \pythoninline{val} et la fonction s'arrête et donne bien le résultat attendu;
-    \item   sinon si \pythoninline{liste_triee[milieu] > val} alors puisque la liste est triée, la position de \pythoninline{val} ne peut être qu'entre \pythoninline{gauche} et \pythoninline{milieu-1}, or \pythoninline{droite} est actualisée avec cette valeur, et P reste vraie.
-    \item   de même si \pythoninline{liste_triee[milieu] < val}
+    \item   avant l'entrée dans la boucle \mintinline{python}{while}, on a\\
+     \mintinline{python}{gauche = 0} et \mintinline{python}{droite = len(liste_triee)-1} donc P est trivialement vérifiée;
+    \item   dans la boucle, si  \mintinline{python}{liste_triee[milieu] == val} alors on renvoie \mintinline{python}{val} et la fonction s'arrête et donne bien le résultat attendu;
+    \item   sinon si \mintinline{python}{liste_triee[milieu] > val} alors puisque la liste est triée, la position de \mintinline{python}{val} ne peut être qu'entre \mintinline{python}{gauche} et \mintinline{python}{milieu-1}, or \mintinline{python}{droite} est actualisée avec cette valeur, et P reste vraie.
+    \item   de même si \mintinline{python}{liste_triee[milieu] < val}
 \end{itemize}
 En sortie de boucle on n'a plus la condition \\
-\pythoninline{gauche <= droite} donc on a \pythoninline{gauche > droite}. Supposons que \pythoninline{val} appartienne à la liste, alors puisque l'invariant de boucle P est vrai y compris à la fin de la boucle, cela veut dire que \pythoninline{val} doit être entre \pythoninline{gauche} et \pythoninline{droite} mais c'est absurde puisque\\  \pythoninline{gauche > droite}. Donc notre supposition est fausse : \pythoninline{val} n'appartient pas à la liste\footnote{Ceci s'appelle un \textit{raisonnement par l'absurde.}}.\\
+\mintinline{python}{gauche <= droite} donc on a \mintinline{python}{gauche > droite}. Supposons que \mintinline{python}{val} appartienne à la liste, alors puisque l'invariant de boucle P est vrai y compris à la fin de la boucle, cela veut dire que \mintinline{python}{val} doit être entre \mintinline{python}{gauche} et \mintinline{python}{droite} mais c'est absurde puisque\\  \mintinline{python}{gauche > droite}. Donc notre supposition est fausse : \mintinline{python}{val} n'appartient pas à la liste\footnote{Ceci s'appelle un \textit{raisonnement par l'absurde.}}.\\
 
 On a donc prouvé la correction de notre fonction.
 
 \section{Complexité}
 
-On va ici évaluer le nombre d'étapes nécessaires au déroulement de la fonction. On va raisonner dans le pire des cas : \pythoninline{val} n'appartient pas à la liste.
+On va ici évaluer le nombre d'étapes nécessaires au déroulement de la fonction. On va raisonner dans le pire des cas : \mintinline{python}{val} n'appartient pas à la liste.
 
-Sans détailler les calculs\footnote{Peux-tu le faire ?}, à chaque itération de boucle, \pythoninline{droite-gauche+1} (nombre de valeurs qui restent à examiner) est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle : \pythoninline{droite == gauche} et on est sûr ou bien de trouver \pythoninline{val} à cet endroit, ou bien on sort de la boucle.\\
+Sans détailler les calculs\footnote{Peux-tu le faire ?}, à chaque itération de boucle, \mintinline{python}{droite-gauche+1} (nombre de valeurs qui restent à examiner) est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle : \mintinline{python}{droite == gauche} et on est sûr ou bien de trouver \mintinline{python}{val} à cet endroit, ou bien on sort de la boucle.\\
 
 Ainsi, pour une liste de longueur 2 on est sûrs d'arriver au résultat en 2 itérations, pour une liste de longueur 4, en 3 itérations et en généralisant, si la liste est de longueur $2^n$, en $n+1$ itérations.\\
 
@@ -141,7 +141,7 @@ Ce nombre $x$ est noté $\log_2(n)$.
 \end{definition}
 
 Ce que l'on vient de prouver, c'est que pour une liste de taille $n$, la fonction\\
- \pythoninline{recherche_dichotomique} nécessitera au plus $E(\log_2(n))+1$ itérations pour déterminer si oui ou non une valeur appartient à cette liste ($E$ représente la fonction \textit{partie entière}).\\
+ \mintinline{python}{recherche_dichotomique} nécessitera au plus $E(\log_2(n))+1$ itérations pour déterminer si oui ou non une valeur appartient à cette liste ($E$ représente la fonction \textit{partie entière}).\\
  
 \begin{propriete}
 Soit une liste triée de longueur $n\in\N^*$.\\

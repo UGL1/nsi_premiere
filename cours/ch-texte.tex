@@ -258,7 +258,7 @@ Beaucoup de documents indiquent donc en en tête leur format d'encodage : en HTM
 
 pour préciser qu'elle est encodée en UTF-8.\\
 \section{Et Python dans tout ça ?}
-En \textsc{Python}, on pourra aussi écrire : \pythoninline{# -*- coding: utf8 -*-} en première ligne de tout script pour signifier la même chose, \textit{et c\ae tera}.\\
+En \textsc{Python}, on pourra aussi écrire : \mintinline{python}{# -*- coding: utf8 -*-} en première ligne de tout script pour signifier la même chose, \textit{et c\ae tera}.\\
 
 \textsc{Python} gère très bien les encodages. On peut fabriquer un convertisseur très rapidement :
 
@@ -270,8 +270,8 @@ fichier.close()
     \end{minted}
 \end{pyc}
 
-Ceci permet de lire le contenu d'un fichier texte (d'où le \pythoninline{'rt'}, pour 'read text') d'un fichier texte encodé en UTF-8, et de le stocker dans la
-variable \texttt{texte}, de type \pythoninline{str}.\\
+Ceci permet de lire le contenu d'un fichier texte (d'où le \mintinline{python}{'rt'}, pour 'read text') d'un fichier texte encodé en UTF-8, et de le stocker dans la
+variable \texttt{texte}, de type \mintinline{python}{str}.\\
 
 \begin{pyc}
     \begin{minted}{python}
@@ -281,7 +281,7 @@ fichier.close()
     \end{minted}
 \end{pyc}
 
-Permet d'écrire un fichier texte (d'où le \pythoninline{'wt'}, pour write text) en UTF-8.\\
+Permet d'écrire un fichier texte (d'où le \mintinline{python}{'wt'}, pour write text) en UTF-8.\\
 
 \section{Exercices}
 \begin{exercice}

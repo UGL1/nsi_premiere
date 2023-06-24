@@ -1,0 +1,51 @@
+\documentclass{nsibook}
+\begin{document}
+\chapter{Variables et affectations}
+
+\section{Le symbole =}
+
+En mathématiques, le symbole $=$ a plusieurs significations
+\begin{itemize}
+	\item dans $2+2=4$, on peut comprendre $=$ comme un opérateur d'évaluation : $2+2$, cela « donne » $4$ ;
+	\item dans $\mathcal{P}=2\times(\ell+L)$, on peut considérer que $=$ sert à définir ce qu'est le périmètre d'un rectangle de dimensions $\ell$ et $L$ ; 
+	\item dans $3x + 2 = 4x +5$, le $=$ sert à convenir que les 2 membres ont la même valeur et on cherche s'il existe un ou des nombres $x$ qui satisfont l'égalité (appelée équation) ;
+	\item \textit{et cætera}. 
+\end{itemize}
+
+En \textsc{Python}, le symbole \mintinline{python}{=}  n'a qu'un seul sens : il sert à l'\textit{affectation}.
+
+\section{L'affectation}
+Il s'agit de « stocker » une valeur dans un endroit de la mémoire auquel \textsc{Python} donne un nom\footnote{En réalité c'est plus compliqué mais cela ne nous intéresse pas.}. Voici un exemple d'affectation : 
+\begin{center}\Large
+\mintinline{python}{a = 2}
+\end{center}\
+\begin{itemize}
+\item   \mintinline{python}{2} est une \textit{valeur} de type \mintinline{python}{int} ;
+\item   la \textit{variable} \mintinline{python}{a} est créée ;\
+\item   \mintinline{python}{a} est « attachée » à la valeur \mintinline{python}{2} ;
+\item   par extension \mintinline{python}{a} est également de type \mintinline{python}{int}.
+\end{itemize}
+Au cours d'un programme la valeur associée à une variable peut changer... D'où le nom de \textit{variable}.\\
+
+Que fait le programme suivant ?
+
+\begin{pyc}
+	\begin{minted}{python}
+		x = 0
+		x = x + 1
+		print(x)    
+	\end{minted}
+\end{pyc}
+
+\begin{itemize}
+	\item il crée une variable \mintinline{python}{x} de type \mintinline{python}{int} valant \mintinline{python}{0} ;
+    \item il évalue \mintinline{python}{x + 1}, trouve \mintinline{python}{1} et affecte cette valeur à \mintinline{python}{x} ;
+    \item évalue \mintinline{python}{x}, trouve 1 et donc affiche \mintinline{python}{1}.
+\end{itemize}
+
+\begin{aretenir}
+	En mathématiques, $x = x + 1$ est une équation sans solution.\\
+
+	En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augmenter la valeur de \mintinline{python}{x} de 1 (on dit aussi \textit{incrémenter}).
+\end{aretenir}
+\end{document}

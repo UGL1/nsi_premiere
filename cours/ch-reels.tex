@@ -21,7 +21,7 @@ $$\boxed{5,4^{-5}\approx (-1)^0\times 2,177866231\times10^{-4}}$$
 
 Dans ce cas, le nombre $d$ comporte 10 chiffres décimaux, appelés \textit{chiffres significatifs}.
 
-Dans un ordinateur ne travaille pas avec des écritures décimales, mais avec des écritures \textit{dyadiques} (l'équivalent des nombres décimaux en
+Un ordinateur ne travaille pas avec des écritures décimales, mais avec des écritures \textit{dyadiques} (l'équivalent des nombres décimaux en
 base 2).
 \begin{exemple}[ : nombre décimal / nombre dyadique]
     \begin{itemize}
@@ -42,7 +42,7 @@ base 2).
 \begin{exemple}[ : écriture scientifique pour un nombre dyadique]
     \begin{itemize}
         \item   En reprenant l'exemple précédent on a $53,14=5,314\times 10^1$, c'est une écriture scientifique.
-        \item   Pour $(101,011)_2$, en se rappelant que multiplier par 2 décale la virgule d'un cran vers la gauche, on a $(101,011)_2=(1,01011)_2\times
+        \item   Pour $(101,011)_2$, en se rappelant que multiplier par 2 décale la virgule d'un cran vers la droite, on a $(101,011)_2=(1,01011)_2\times
                   2^2$.
     \end{itemize}
 \end{exemple}
@@ -108,9 +108,9 @@ C'est l'équivalent dyadique de $$\dfrac{1}{3}=(0,3333\ldots)_{10}$$
 Et puisque \textsc{Python} ne peut pas représenter intégralement le nombre 0,1 il l'approche du mieux qu'il peut : en fait pour \textsc{Python} la
 valeur de 0,1 est :\\
 
-\pythoninline{0.1000000000000000055511151231257827021181583404541015625}\\
+\mintinline{python}{0.1000000000000000055511151231257827021181583404541015625}\\
 
-Mais celui-ci a la gentillesse d'afficher \pythoninline{0.1}.\\
+Mais celui-ci a la gentillesse d'afficher \mintinline{python}{0.1}.\\
 
 Il faut se résigner à accepter les erreurs d'arrondis :
 \begin{pys}
@@ -120,19 +120,19 @@ Il faut se résigner à accepter les erreurs d'arrondis :
     \end{minted}
 \end{pys}
 
-Cet exemple prouve que \textit{tester l'égalité de 2 \pythoninline{float} n'a pas d'utilité}. On aura plutôt intérêt à \textit{tester si leur différence est
+Cet exemple prouve que \textit{tester l'égalité de 2 \mintinline{python}{float} n'a pas d'utilité}. On aura plutôt intérêt à \textit{tester si leur différence est
     très petite}.\\
 
-De même, l'addition de plusieurs \pythoninline{float} donne un résultat qui peut dépendre de l'ordre dans lequel on les ajoute.
+De même, l'addition de plusieurs \mintinline{python}{float} donne un résultat qui peut dépendre de l'ordre dans lequel on les ajoute.
 Elle \textit{n'est pas non plus associative} : \\
 
-\pythoninline{a + (b + c)} et \pythoninline{(a + b) + c} peuvent avoir des valeurs différentes.\\
+\mintinline{python}{a + (b + c)} et \mintinline{python}{(a + b) + c} peuvent avoir des valeurs différentes.\\
 
 
 Les erreurs d'arrondis se cumulent. Pour les minimiser on aura intérêt à appliquer la règle suivante :
 
 \begin{propriete}[ : Règle de la photo de classe]
-    Dans une somme de \pythoninline{float}, l'erreur est minimisée quand on commence par ajouter les termes de plus petite valeur absolue.
+    Dans une somme de \mintinline{python}{float}, l'erreur est minimisée quand on commence par ajouter les termes de plus petite valeur absolue.
 \end{propriete}
 
 \section{Exercices}
@@ -178,14 +178,14 @@ Les erreurs d'arrondis se cumulent. Pour les minimiser on aura intérêt à appl
 \end{exercice}
 
 \begin{exercice}
-    Faire calculer \pythoninline{1+2**(-53)-1} puis \pythoninline{1-1+2**(-53)}.\\
+    Faire calculer \mintinline{python}{1+2**(-53)-1} puis \mintinline{python}{1-1+2**(-53)}.\\
     Que remarque-t-on ?\\
 \end{exercice}
 
 \begin{exercice}
     \'Ecrire un programme déterminant le plus petit entier $n$ pour lequel \textsc{Python} considère que $2^{-n}=0$.\\
     En faisant le lien avec le format IEEE 754 64 bits, quelle valeur devrait-on trouver ?\\
-    Quelle explication peut-on imaginer (sachant qu'en \textsc{Python}, les \pythoninline{float} sont bien codés sur 64 bits) ?
+    Quelle explication peut-on imaginer (sachant qu'en \textsc{Python}, les \mintinline{python}{float} sont bien codés sur 64 bits) ?
 \end{exercice}
 
 \begin{exercice}
@@ -196,7 +196,7 @@ Les erreurs d'arrondis se cumulent. Pour les minimiser on aura intérêt à appl
     \textbf{1.} Calculer à l'aide d'un script $\displaystyle S=\sum_{n=1}^{10^6}\dfrac{1}{n^4}$ .\\
 
     Ajoute-t-on des termes de plus en plus petits ou de plus en plus grands ?\\
-    Continuer le script pour afficher $c-S$ (on pourra utiliser \pythoninline{from math import pi}).\\
+    Continuer le script pour afficher $c-S$ (on pourra utiliser \mintinline{python}{from math import pi}).\\
 
     \textbf{2.} Calculer S \og dans l'autre sens \fg.\\
     Afficher $c-S$.\\
@@ -209,10 +209,10 @@ Les erreurs d'arrondis se cumulent. Pour les minimiser on aura intérêt à appl
 
     \textbf{1.}	Montrer qu'un triangle (3,4,5) est rectangle, ainsi qu'un triangle ($\sqrt{11}$, $\sqrt{12}$, $\sqrt{23}$).\\
 
-    \textbf{2.} \'Ecrire une fonction \pythoninline{est_rectangle(a,b,c)}: qui renvoie \pythoninline{True} si \pythoninline{c**2 == a**2 + b**2} et, sinon, qui renvoie la différence
-    entre \pythoninline{c**2} et \pythoninline{a**2+b**2}.\\
+    \textbf{2.} \'Ecrire une fonction \mintinline{python}{est_rectangle(a,b,c)}: qui renvoie \mintinline{python}{True} si \mintinline{python}{c**2 == a**2 + b**2} et, sinon, qui renvoie la différence
+    entre \mintinline{python}{c**2} et \mintinline{python}{a**2+b**2}.\\
 
-    \textbf{3.} Tester la fonction \pythoninline{est_rectangle} avec les deux triangles précédents.\\
+    \textbf{3.} Tester la fonction \mintinline{python}{est_rectangle} avec les deux triangles précédents.\\
     Que remarque-t-on ? Comment modifier la fonction pour qu'elle soit plus satisfaisante ?
 \end{exercice}
 
