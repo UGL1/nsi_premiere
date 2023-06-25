@@ -7,6 +7,18 @@
 % Common
 \input{common.tex}
 
+
+% Footnotes formatting
+
+\makeatletter
+
+\renewcommand\@makefntext[1]{%
+\setlength\parindent{1em}%
+\noindent
+\mbox{\@thefnmark.~}{#1}}
+
+\makeatother
+
 % Title and section formatting
 \RequirePackage{titlesec}
 

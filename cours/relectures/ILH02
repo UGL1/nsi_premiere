@@ -1,0 +1,146 @@
+Bonsoir Frédéric,
+
+
+
+Pour le chapitre 2 (suite)
+
+Page 22 : il manque des unités
+
+1 mégaoctet = 1 Mo = 1000 ko
+
+Idem pour gigaoctet et téraoctet
+
+ 
+
+Pour le chapitre 3
+
+Page 25 : « Dans un ordinateur ne travaille pas » 
+
+----   il manque un mot ou erreur formulation
+
+Page 26 : multiplier par 2 décale la virgule « vers la droite » à la place de « vers la gauche »
+
+
+Pour le chapitre 8
+
+Page 66 : « a // b est le quotient et a \% b est le reste. » 
+
+---- % à la place de \%
+
+ 
+
+Page 67 :
+
+>>> 22 % 7
+
+2
+
+---- Le reste est 1 à la place de 2
+
+ 
+
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+(Vérif pour isa )
+
+>>> 10 ** 4
+
+10_000
+
+ 
+
+>>> 10 ** 4                       
+
+10000                                   Un idle différent ?
+
+ 
+
+>>> c=1/100000
+
+>>> c
+
+1e-05
+
+ 
+
+>>> c=1/100_000
+
+>>> c
+
+1e-05                                                                   ok python comprend les deux écritures
+
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+ 
+
+Page 69 : « On peut additionner 2 variables de type str … »
+
+Une proposition mais c’est un détail sur le vocabulaire : tu ne veux pas parler de concaténation ; par exemple :
+
+L'opérateur + appliqué à deux chaînes de caractères produit une nouvelle chaîne qui est la concaténation (c'est-à-dire la mise bout-à-bout) des deux premières.
+
+ 
+
+Page 70 : à plusieurs endroits il y a « chaine » mettre à la place « chaîne » ou alors les deux s’écrivent ?
+
+Endroit 1 : Voici comment Python représente la chaine précédente
+
+Endroit 2 : Enfin on peut vouloir extraire une sous-chaîne d’une chaine
+
+Endroit 3 : renvoie la sous-chaine de caractère
+
+Endroit 4 : renvoie la sous-chaine commençant par
+
+Endroit 5 : renvoie la sous-chaine se terminant par
+
+ 
+
+Page 71 : « après tout, une chaine de caractère est une liste de lettres »
+
+J’éviterais cette phrase. Si « liste de lettres » est une vague idée ok mais si l’élève « pense » python cela peut porter à confusion (sur les propriétés - une liste est modifiable mais pas les chaînes de caractère).
+
+ 
+
+Page 72 :
+
+>>> d = list(c)
+
+>>> d
+
+['2020.0']
+
+ 
+
+Sur mon idle Python, je n’obtiens pas le même résultat :
+
+>>> d = list(c)
+
+>>> d
+
+['2', '0', '2', '0', '.', '0']
+
+ 
+
+ 
+
+Sinon, encore un détail mais je rajouterais les fonctions de conversion dans la phrase :
+
+« Enfin, pour changer le type d’une variable, on peut utiliser les fonctions int,
+
+float, str et list (quand cela a un sens). »
+
+ 
+
+Page 73 : guillemet «  ouvert mais pas fermé par  » dans la phrase :
+
+Une constante est « une variable dont la valeur est fixée lors de son initialisation
+
+et qui ne peut plus être modifiée ensuite.
+
+
+
+A+, Isabelle.
+
+
+
+

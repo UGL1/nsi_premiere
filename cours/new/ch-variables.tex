@@ -1,5 +1,3 @@
-\documentclass{nsibook}
-\begin{document}
 \chapter{Variables et affectations}
 
 \section{Le symbole =}
@@ -20,32 +18,80 @@ Il s'agit de « stocker » une valeur dans un endroit de la mémoire auquel \tex
 \mintinline{python}{a = 2}
 \end{center}\
 \begin{itemize}
-\item   \mintinline{python}{2} est une \textit{valeur} de type \mintinline{python}{int} ;
-\item   la \textit{variable} \mintinline{python}{a} est créée ;\
-\item   \mintinline{python}{a} est « attachée » à la valeur \mintinline{python}{2} ;
-\item   par extension \mintinline{python}{a} est également de type \mintinline{python}{int}.
+	\item   \mintinline{python}{2} est une \textit{valeur} de type \mintinline{python}{int} ;
+	\item   la \textit{variable} \mintinline{python}{a} est créée ;\
+	\item   \mintinline{python}{a} est « attachée » à la valeur \mintinline{python}{2} ;
+	\item   par extension \mintinline{python}{a} est également de type \mintinline{python}{int}.
 \end{itemize}
 Au cours d'un programme la valeur associée à une variable peut changer... D'où le nom de \textit{variable}.\\
 
+
+\begin{definition}[ : affectation]
+Lors d'une affectation
+\begin{itemize}
+	\item d'abord \textsc{Python} évalue ce qu'il y a à droite du symbole \mintinline{python}{=} ;
+	\item ensuite il affecte cette valeur à la variable qui figure à gauche du symbole \mintinline{python}{=} ;
+	\item si la variable n'existe pas déjà, elle est créée automatiquement ;
+	\item le type de la variable, c'est le type de la valeur qu'on lui affecte. 
+\end{itemize}
+\end{definition}
 Que fait le programme suivant ?
 
 \begin{pyc}
-	\begin{minted}{python}
-		x = 0
-		x = x + 1
-		print(x)    
-	\end{minted}
+\begin{minted}{python}
+x = 0
+x = x + 1
+print(x)    
+\end{minted}
 \end{pyc}
 
 \begin{itemize}
 	\item il crée une variable \mintinline{python}{x} de type \mintinline{python}{int} valant \mintinline{python}{0} ;
-    \item il évalue \mintinline{python}{x + 1}, trouve \mintinline{python}{1} et affecte cette valeur à \mintinline{python}{x} ;
-    \item évalue \mintinline{python}{x}, trouve 1 et donc affiche \mintinline{python}{1}.
+	\item il évalue \mintinline{python}{x + 1}, trouve \mintinline{python}{1} et affecte cette valeur à \mintinline{python}{x} ;
+	\item évalue \mintinline{python}{x}, trouve 1 et donc affiche \mintinline{python}{1}.
 \end{itemize}
 
 \begin{aretenir}
-	En mathématiques, $x = x + 1$ est une équation sans solution.\\
+En mathématiques, $x = x + 1$ est une équation sans solution.\\
 
-	En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augmenter la valeur de \mintinline{python}{x} de 1 (on dit aussi \textit{incrémenter}).
+En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augmenter la valeur de \mintinline{python}{x} de 1 (on dit aussi \textit{incrémenter}).
 \end{aretenir}
-\end{document}
+
+\subsection{Affectations multiples}
+\textsc{Python} permet d'affecter plusieurs valeurs à plusieurs variables en même temps.
+
+\begin{pys}\begin{minted}{python}
+>>> a, b= 10, 2
+>>> a
+10
+
+>>> b
+2
+
+>>> a, b = b, a # permet d'échanger a et b
+>>> a
+2
+
+>>> b
+10
+
+\end{minted}
+\end{pys}
+
+\subsection{Notation condensée}
+On est souvent amené à écrire des instructions telles que  \mintinline{python}{a = a + 1} ou \mintinline{python}{b = b / 2}. Cela peut être lourd quand les variables ne s'appellent
+pas \mintinline{python}{a} ou \mintinline{python}{b} mais \mintinline{python}{rayon_sphere} ou \mintinline{python}{largeur_niveau}. On peut utiliser les notation suivantes :
+\begin{pys}\begin{minted}{python}
+>>> rayon_sphere = 3.4
+>>> rayon_sphere /= 2
+>>> rayon_sphere
+1.7
+
+>>> largeur_niveau = 19
+>>> largeur_niveau += 1
+>>> largeur_niveau
+20
+\end{minted}
+\end{pys}
+
+On dispose également de \mintinline{python}{*=}, \mintinline{python}{//=}, \mintinline{python}{%=}, \mintinline{python}{-=} et \mintinline{python}{**=}.

@@ -1,0 +1,84 @@
+Bonsoir Frédéric
+une petite pause fête de la musique ; je reprends donc ce soir mais j'ai stoppé assez vite comme tu pourras le voir car j'ai "trébuché" au niveau de la démonstration de la terminaison.
+
+Pour le chapitre 9
+
+Page 82 : sur le diagramme au niveau du else
+
+--- bloc conditionnel 2 au lieu de bloc conditionnel 1
+
+ 
+
+Pour le chapitre 10
+
+Page 88 :
+
+Indentation incorrecte (apparue sur le pdf) pour « solde = 2000 # solde initial »
+
+ 
+
+Il manque un mot dans « Commençons examiner un nouveau type : range (plage de valeurs) »
+
+ 
+
+Un détail « Les boucles while doivent être utilisées avec soin : » ou « La boucle while doit être utilisée avec soin : »
+
+ 
+
+Pour le chapitre 11
+
+ 
+
+Page 96
+
+ 
+
+Un détail (fait peut-être exprès) pour la fonction f qui renvoie le plus petit entier de cette liste.
+
+Version Python : la liste s’appelle lst
+
+Dans la suite (3.1 et 3.2) : la liste s’appelle L     
+
+ 
+
+Pour le chapitre 12
+
+Page 104 (méthode) une virgule en trop dans :
+
+« Si on arrive à une liste vide c’est que val , n’est pas dans liste_triee »
+
+ 
+
+Page 105 un point en trop dans :
+
+« De même quand la fonction renvoie une valeur
+
+𝑚 ≠ −1, est-ce que cela veut bien dire que val==liste_triee[m] ?. »
+
+ 
+
+STOP PROBLEME AU NIVEAU DE LA PREUVE DE LA TERMINAISON  OU JE FATIGUE ?
+
+ 
+
+ 
+
+Pour la table des matières :
+
+ 
+
+6 Logique
+
+ 
+
+---- Un paragraphe 1 mais pas de paragraphe 2
+
+ 
+
+7 Systèmes d’exploitation  
+
+---- Un paragraphe 3.1 mais pas de paragraphe 3.2
+
+
+
+
