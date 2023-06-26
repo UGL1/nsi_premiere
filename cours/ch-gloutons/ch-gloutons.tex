@@ -1,0 +1,58 @@
+\chapter{Algorithmes gloutons}
+\section{Une manière de procéder...}
+
+\begin{definition}[ : algorithme glouton]
+Un algorithme est dit \textit{glouton} lorsque
+\begin{itemize}
+	\item 	il procède étape par étape, avec une boucle ;
+	\item 	à chaque itération il essaye d'\textit{optimiser} une grandeur (maximiser ou minimiser) en faisant un \textit{choix} ;
+	\item 	les choix faits sont \textit{définitifs} : ils ne sont jamais remis en questions lors des itérations suivantes.	
+\end{itemize}
+\end{definition}
+
+\begin{exemple}[ : rendu de monnaie]
+Lorsqu'on rend la monnaie en euros et qu'on veut rendre le moins de pièces (ou billets) possibles, on
+\begin{itemize}
+\item 	procède pièce par pièce ;
+\item  	choisit la pièce dont la valeur est la plus grande possible tout en restant inférieure ou égale au montant qu'il reste à rendre ;
+\item 	on continue ainsi jusqu'à ce qu'il ne reste plus rien à rendre, sans jamais reprendre une pièce rendue auparavant.
+\end{itemize}
+Cette méthode est gloutonne et elle permet toujours de rendre la monnaie avec le moins de pièces possible (en tout cas lorsque le système monétaire est l'euro).
+\end{exemple}
+\section{Qui n'est pas toujours optimale}
+
+
+Considérons un robot placé en A, qui veut monter le plus haut possible.
+S'il applique la méthode gloutonne suivante :\medskip\par
+\floatpictureright{0.33}{ch-gloutons/img/glouton}{
+\begin{itemize}
+\item à chaque seconde, tant que possible ;
+\item regarder à droite ou à gauche sur une petite distance ;
+\item aller dans la direction ou la pente est la plus forte.
+\end{itemize}
+}\medskip\par
+Alors il se retrouvera en m, et pas en M.
+
+\begin{aretenir}
+\begin{itemize}
+\item  un algorithme glouton ne fournit pas toujours une solution optimale ;
+\item pour s'assurer qu'il fournit une démonstration optimale, il faut le \textit{démontrer}.
+\end{itemize}
+\end{aretenir}
+
+\section{Des exemples optimaux}
+
+\begin{itemize}
+	\item le rendu de pièces en euros ;
+	\item l'écriture d'un entier naturel en binaire par la méthode des soustractions (qui correspond à un rendu de pièces qui ont des valeurs de $2^n$) ;
+	\item l'algorithme dit « des conférenciers » ;	
+\end{itemize}
+Nous en verrons d'autres en Terminale.
+
+\section{Des exemples non optimaux}
+
+\begin{itemize}
+	\item le problème du robot exposé précédemment ;
+	\item les méthodes gloutonnes pour résoudre le problème du « sac à dos ».
+\end{itemize}
+
