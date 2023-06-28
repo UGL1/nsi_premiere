@@ -208,7 +208,7 @@ C'est aussi le cas quand on veut par exemple déterminer l'indice de la premièr
 C'est plus simple que le parcours selon les indices mais on pert un peu d'information car pendant le parcours, on ne sait pas à quelle place on se trouve dans la liste.
 
 \begin{definition}[ : parcours selon les éléments]
-	Le parcours des éléments d'une liste \mintinline{python}{lst} s'effectue à l'aide d'une simple boucle \mintinline{python}{for x in lst}. \mintinline{python}{x} prend alors successivement les valeurs de chacun des éléments de \mintinline{python}{lst}, dans l'ordre.  
+	Le parcours des éléments d'une liste \mintinline{python}{lst} s'effectue à l'aide d'une simple boucle \mintinline{python}{for x in lst}. \mintinline{python}{x} prend alors successivement les valeurs de chacun des éléments de \mintinline{python}{lst}, dans l'ordre.
 \end{definition}
 \begin{exemple}[ : un parcours selon les éléments]
 	\begin{minted}{python}
@@ -225,7 +225,7 @@ On peut toujours transformer un parcours selon les éléments en un parcours sel
 Le contraire est faux si l'on a \textit{absolument} besoin de savoir quels sont les indices des éléments que l'on examine lors du parcours.
 
 \begin{encadrecolore}{À éviter absolument}{UGLiRed}
-	Les codes comme celui-ci : 
+	Les codes comme celui-ci :
 	\begin{minted}{python}
 		for i in lst:
 			print(i)
@@ -237,16 +237,16 @@ Le contraire est faux si l'on a \textit{absolument} besoin de savoir quels sont 
 		for x in range(len(lst)):
 			print(lst[x])
 	\end{minted}
-	Là encore il y a beaucoup de chances que l'indice \mintinline{python}{x} soit pris pour une valeur. 
+	Là encore il y a beaucoup de chances que l'indice \mintinline{python}{x} soit pris pour une valeur.
 \end{encadrecolore}
 
 \begin{encadrecolore}{Conseil}{UGLiGreen}
-Réserver les noms de variables \mintinline{python}{i}, \mintinline{python}{j} et \mintinline{python}{k} pour les indices et \mintinline{python}{x}, \mintinline{python}{y} et \mintinline{python}{z} pour les éléments.      
+	Réserver les noms de variables \mintinline{python}{i}, \mintinline{python}{j} et \mintinline{python}{k} pour les indices et \mintinline{python}{x}, \mintinline{python}{y} et \mintinline{python}{z} pour les éléments.
 \end{encadrecolore}
 
 \section{Mutabilité}
 
-Examinons la différence entre un type \textit{non mutable} tel que \mintinline{python}{int} et le type \mintinline{python}{list}, qui est \textit{mutable}.    
+Examinons la différence entre un type \textit{non mutable} tel que \mintinline{python}{int} et le type \mintinline{python}{list}, qui est \textit{mutable}.
 \subsection{Variables de type non-mutable}
 
 \floatpictureright{0.4}{ch-listes/img/nonmut1}{
@@ -258,13 +258,13 @@ Examinons la différence entre un type \textit{non mutable} tel que \mintinline{
 \floatpictureleft{0.4}{ch-listes/img/nonmut2}{
 	\mintinline{python}{b = a}\\
 
-	Une deuxième variable \mintinline{python}{b} est créée, avec pour valeur 2 également. Elles partagent la même adresse-mémoire. 
+	Une deuxième variable \mintinline{python}{b} est créée, avec pour valeur 2 également. Elles partagent la même adresse-mémoire.
 }
 
 \floatpictureright{0.4}{ch-listes/img/nonmut3}{
 	\mintinline{python}{b = 10}\\
 
-	La valeur 10 est stockée dans une autre adresse mémoire (car la valeur 2 sert toujours pour \mintinline{python}{a}) et associée à \mintinline{python}{b}. 
+	La valeur 10 est stockée dans une autre adresse mémoire (car la valeur 2 sert toujours pour \mintinline{python}{a}) et associée à \mintinline{python}{b}.
 }
 
 \subsection{Variables de type mutable}
@@ -275,7 +275,7 @@ Les élements 5, 6 et 8 sont stockés en mémoire et \mintinline{python}{lst1} c
 \includegraphics[width=\linewidth]{ch-listes/img/mut1.png}\\
 
 
- \mintinline{python}{lst2 = lst1}\\
+\mintinline{python}{lst2 = lst1}\\
 
 La variable \mintinline{python}{lst2} est associée à la même valeur que \mintinline{python}{lst1}.\\
 \includegraphics[width=\linewidth]{ch-listes/img/mut2.png}\\
@@ -293,11 +293,11 @@ Voilà donc pourquoi lorsqu'on écrit \mintinline{python}{lst2 = lst1}, tout cha
 
 \mintinline{python}{lst2 = lst1[:]}\\
 
-Les éléments de \mintinline{python}{lst1} sont recopiés dans une autre zone mémoire, et \mintinline{python}{lst2} « pointe » sur l'adresse du début de cette zone.\\  
+Les éléments de \mintinline{python}{lst1} sont recopiés dans une autre zone mémoire, et \mintinline{python}{lst2} « pointe » sur l'adresse du début de cette zone.\\
 \includegraphics[width=\linewidth]{ch-listes/img/mut4.png}\\
 
 
 \mintinline{python}{lst1[0] = 10}\\
 
-Le changement n'affecte pas \mintinline{python}{lst2}.\\ 
+Le changement n'affecte pas \mintinline{python}{lst2}.\\
 \includegraphics[width=\linewidth]{ch-listes/img/mut5.png}

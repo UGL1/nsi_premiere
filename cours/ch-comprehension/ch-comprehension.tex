@@ -1,0 +1,115 @@
+\chapter{\'Ecriture en compréhension}
+
+\section{\'Ecritures simples}
+
+Jusqu'à présent, pour construire des listes on a souvent :
+\begin{itemize}
+    \item    créé une liste \mintinline{python}{lst} vide ;
+    \item    construit une boucle \mintinline{python}{for} ou \mintinline{python}{while} ;
+    \item    peuplé la liste avec \mintinline{python}{lst.append}.
+\end{itemize}
+
+\begin{exemple}[]
+    \begin{minted}{python}
+        lst = []
+        for i in range(10):
+            lst.append(i*i)
+        print(lst)
+    \end{minted}
+\end{exemple}
+
+
+Ce programme affiche \mintinline{python}{[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]}\\
+C'est la liste des carrés des 10 premiers entiers naturels.\\
+En mathématiques, l'ensemble des carrés des 10 premiers entiers naturels se note
+\[\left\lbrace i^2\ |\ i\in\N,\,i<10\right\rbrace\]
+C'est une écriture en \textit{compréhension}.\\
+On peut faire la même chose en \textsc{Python} : \\
+
+\mintinline{python}{lst = [i*i for i in range(10)]}\\
+
+\'Evidemment, c'est plus rapide que la méthode précédente... Et on peut faire bien plus !
+On peut utiliser une liste pour en construire une autre, par exemple en ajoutant 1 à chacun des éléments :
+\begin{pyc}
+    \begin{minted}{python}
+    >>> lst1 = [2, -1, 3, 4, 7]
+    >>> lst2 = [x + 1 for x in lst1]
+    >>> lst2
+    [3, 0, 4, 5, 8]
+    \end{minted}
+\end{pyc}
+Dans le même esprit, on peut construire une liste dont les élements sont ceux de la première, mais avec une conversion de type :
+
+\begin{pyc}
+\begin{minted}{python}
+>>> lst1 = ['2', '0', '13']
+>>> lst2 = [int(x) for x in lst1]
+>>> lst2
+[2, 0, 13]
+\end{minted}
+\end{pyc}
+
+
+Ou encore fabriquer la liste des initiales à partir d'une liste de prénoms :
+\begin{pyc}
+\begin{minted}{python}
+>>> lst1 = ['Fred', 'Titouan', 'Tinaïg']
+>>> lst2 = [prenom[0] for prenom in lst1]
+>>> lst2
+['F', 'T', 'T']
+\end{minted}
+\end{pyc}
+
+\section{\'Ecritures avec conditions}
+
+
+
+Il est possible d'utiliser \mintinline{python}{if} en compréhension : mettons dans \mintinline{python}{lst2} le double de chaque élément de \mintinline{python}{lst1} supérieur à 10 (dans l'ordre de parcours).
+\begin{pyc}
+\begin{minted}{python}
+l>>> lst1 = [8, 0, 11, 10, 3, 15]
+>>> lst2 = [2 * x for x in lst1 if x > 10]
+>>> lst2
+[22, 30]
+\end{minted}
+\end{pyc}
+
+
+
+Il est possible d'utiliser \mintinline{python}{if ... else ...} en compréhension, mais à ce moment là il faut écrire les conditions au début   : créons une nouvelle liste en remplaçant tous les nombres négatifs de \mintinline{python}{lst1} par zéro.
+\begin{pyc}
+\begin{minted}{python}
+>>> lst1 = [8, -10, 11, -4, -3, 15]
+>>> lst2 = [(x if x > 0 else 0) for x in lst1]
+# les parenthèses sont facultatives
+>>> lst2
+[8, 0, 11, 0, 0, 15]
+\end{minted}
+\end{pyc}
+
+Créons une liste contenant les indices des éléments de \mintinline{python}{lst1} qui sont strictement positifs.
+\begin{pyc}
+\begin{minted}{python}
+>>> lst1 = [8, -10, 11, -4, -3, 15]
+>>> lst2 = [i for i in range(len(lst1)) if lst1[i] > 0]
+>>> lst2
+[0, 2, 5]
+\end{minted}
+\end{pyc}
+
+\section{Les écritures en compréhension imbriquées}
+
+$$\begin{matrix}
+        0 & 0 & 0 & 0 \\0 & 0 & 0 & 0 \\0 & 0 & 0 & 0
+    \end{matrix}$$
+Si on veut représenter ce « tableau de nombres » par une liste, on peut écrire cet liste de 3 lignes comportant chacune 4 éléments :\\
+
+\mintinline{python}{lst = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]}.\\
+
+Cependant il est plus pratique d'écrire\\
+
+\mintinline{python}{lst=[[0 for j in range(4)] for i in range(3)]}
+
+\section{Pour conclure}
+
+On peut combiner toutes les techniques que nous venons de voir. Par exemple on peut créer une liste de listes de listes avec des conditions, \textit{et c\ae tera}. La seule limite, c'est l'imagination et la capacité à écrire en \textsc{Python} !

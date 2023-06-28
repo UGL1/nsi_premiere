@@ -1,0 +1,173 @@
+\chapter{Dictionnaires}
+\section{Un nouveau type}
+
+\floatpictureright{0.3}{ch-dictionnaires/img/dico}{
+    On demande à des jeunes quel est leur sport préféré, les résultats sont présentés sur la figure ci-contre.\\
+    Un sport peut être cité par \textit{plusieurs} jeunes, en revanche chaque jeune ne peut citer qu'\textit{un seul} sport.\\
+    On pourrait utiliser une ou plusieurs listes pour représenter ces données mais il y a mieux : le \textit{dictionnaire}.
+    La variable \mintinline{python}{sport} est de type \mintinline{python}{dict} :
+}
+\begin{pyc}
+    \begin{minted}{python}
+        sport = {'A': 'Tennis', 'B': 'Basket',
+                 'C': 'Judo', ' D': 'Boxe',
+                 'E': 'Foot', 'F': 'Gym',
+                 'G': 'Foot'}
+        \end{minted}
+\end{pyc}
+
+
+\begin{definition}[ : dictionnaire]
+    Un dictionnaire est un ensemble d'\textit{éléments}.\\
+    les éléments sont des couples de la forme \textit{clé : valeur}.\\
+
+    La syntaxe est :\\ \mintinline{python}{variable = { cle1 : valeur1, cle2 : valeur2, ...}}\\
+
+    Les valeurs peuvent être de n'importe quel type. Les clés peuvent être
+    \begin{itemize}
+        \item 	des \mintinline{python}{bool}, des \mintinline{python}{int}, des \mintinline{python}{float};
+        \item 	des \mintinline{python}{str}...
+        \item 	mais pas des \mintinline{python}{list} !
+    \end{itemize}
+\end{definition}
+
+
+On peut tout de même utiliser des \mintinline{python}{tuples} en guise de clés :  les \mintinline{python}{tuples} ressemblent aux \mintinline{python}{list} mais sont \textit{non mutables}.\\
+
+\mintinline{python}{a = (1, 2, 3)} est un exemple de \mintinline{python}{tuple}.
+
+\section{Opérations sur les dictionnaires}
+
+\subsection{Accéder à une valeur par sa clé}
+Pour connaître le sport préféré de \mintinline{python}{'A'}, c'est simple :
+\begin{pyc}
+    \begin{minted}{python}
+>>> sport['A']
+'Tennis'        
+    \end{minted}
+\end{pyc}
+
+
+\subsection{Créer de nouveaux couples clé: valeur}
+
+Contrairement aux listes, il n'y a pas de méthode \texttt{append}.\\
+Pour intégrer l'information « le sport préféré de H est le Rugby » on écrira simplement :\\
+\begin{pyc}
+    \begin{minted}{python}
+        >>> sport['H']='Rugby'
+    \end{minted}
+\end{pyc}
+
+
+\subsection{Créer un dictionnaire vide et le peupler}
+
+On peut partir d'un dictionnaire vide et remplir ses valeurs au fur et à mesure :
+
+\begin{pyc}
+    \begin{minted}{python}
+        >>> d = dict()
+        >>> d['bonjour'] = 'hello'
+        >>> d['crayon'] = 'pencil'
+        >>> d['se prélasser'] = 'to bask'
+    \end{minted}
+\end{pyc}
+\subsection{Supprimer un élément du dictionnaire}
+
+\mintinline{python}{del d['crayon']} supprime l'élément \mintinline{python}{'crayon': 'pencil'}.
+
+\subsection*{fusionner 2 dictionnaires}
+\begin{minted}{python}
+>>> d1 = {"anglais": "bread", 
+          "français": "pain", 
+          "slovaque": "chlieb"}
+>>> d2 = {"allemand": "brot", "italien": "pane"}
+>>> d1.update(d2) # fusionne d2 dans d1
+>>> d1
+{"anglais": "bread", "français": "pain", "slovaque": "chlieb", "allemand": "brot", "italien": "pane"}
+\end{minted}
+
+\subsection{Parcourir l'ensemble des clés d'un dictionnaire}
+\begin{pyc}
+    \begin{minted}{python}
+    for cle in d1.keys():
+        print(cle)
+    \end{minted}
+\end{pyc}
+Ce script affiche
+\begin{minted}{python}
+anglais
+français
+slovaque
+allemand
+italien
+\end{minted}
+
+\subsection{Parcourir l'ensemble des valeurs d'un dictionnaire}
+\begin{pyc}
+    \begin{minted}{python}
+for valeur in d1.values():
+    print(valeur)
+\end{minted}
+\end{pyc}
+Ce script affiche
+\begin{minted}{python}
+bread
+pain
+chlieb
+brot
+pane
+\end{minted}
+
+\subsection{Précisions}
+\mintinline{python}{d1.keys()} et \mintinline{python}{d1.values()} ressemblent à des listes mais n'en sont pas !\footnote{Ce sont des \textit{itérateurs}, sctructures destinées à être parcourues. }\\
+
+Pour avoir par exemple la liste des clés de \mintinline{python}{d1} on écrira :\\
+
+\mintinline{python}{list(d1.keys())}\\
+
+ou bien en \textit{compréhension} (ce qui revient au même mais peut s'avérer utile)
+
+\mintinline{python}{[k for k in d1.keys()]}
+
+\subsection{Erreurs de clé}
+\begin{minted}{python}
+print(d1['suédois'])
+\end{minted}
+
+Ce script produit une erreur :
+
+{\color{red}\texttt{KeyError : 'suédois'}}
+
+\begin{exemple}[ : Utilisation d'un dictionnaire]
+    On veut créer un tableau de $10\times 10$ cases avec la valeur 0 dedans.\\
+
+    On peut bien sûr créer cela avec une liste de listes (en compréhension) mais on peut également utiliser un dictionnaire :\\
+
+    \mintinline{python}{{(x, y) : 0 for x in range(1, 11) for y in range(1, 11)}}\\
+
+    \textbf{Avantages :}
+    \begin{itemize}
+        \item 	plus simple à manipuler : on écrit \mintinline{python}{d[x, y]} au lieu de \mintinline{python}{d[x][y]} ;
+        \item 	on n'est pas obligé de faire commencer les indices à zéro.
+    \end{itemize}
+
+    \textbf{Inconvénients :}
+    \begin{itemize}
+        \item prend plus de place en mémoire (on s'en fiche un peu) ;
+        \item plus flexible entraîne plus de possibilité d'erreurs !
+    \end{itemize}
+\end{exemple}
+
+
+\section{Utilisation des dictionnaires}
+
+
+Typiquement, pour stocker des \textit{données structurées} :    \\
+\begin{minted}{python}
+reseau = {'nom'        : 'local',
+          'ip'         : '192.168.1.0',
+          'masque'     : '255.255.255.0',
+          'passerelle' : '192.168.1.254'}
+\end{minted}
+
+On utilise fréquemment des listes de dictionnaires, ou bien des dictionnaires de listes.

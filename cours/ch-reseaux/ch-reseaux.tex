@@ -1,0 +1,170 @@
+\chapter{Réseau - principes}
+
+Un \textit{réseau}, c'est un ensemble d'\textit{entités} qui \textit{communiquent} :
+\begin{itemize}
+    \item 	des fourmis qui envoient des informations par voie \textit{chimique} (les phéromones)  ;
+    \item 	des individus qui s'envoient des colis postaux ou du courrier  ;
+    \item 	des ordinateurs qui s'envoient des données.
+\end{itemize}
+Chacun des trois exemples ci-dessus est remarquable par son efficacité.
+Le premier est sans doute le fruit de l'évolution.\\
+Le deuxième est le résultat de \textit{conventions} et \textit{processus} que les êtres humains ont produits : parmi ces conventions il y a les règles d'écriture d'une adresse postale et aussi le moyen de payer le transport du colis \textit{via} un ou des timbres postaux et parmi les processus il y a l'acheminement du courrier par voie routière, ferrée, maritime ou aériench-reseaux/imgne.\\
+Quant au troisième, il est également le fruit de conventions et processus très aboutis que nous allons tenter de détailler dans ce chapitre, il fonctionne remarquablement bien et s'appelle Internet. Ce réseau, composé de \textit{milliards} de machines qui communiquent entre elles et qui permet à deux ordinateurs séparés de milliers de kilomètres de s'échanger une quantité considérable d'informations en une fraction de seconde est bel et bien la plus grande structure que l'être humain ait construit à ce jour. Elle mérite bien qu'on s'attarde un peu sur son fonctionnement.\\
+
+\section{L'idée du modèle à couches empilées}
+
+La finalité d'un réseau, quel qu'il soit, c'est transporter de la manière la plus fiable possible des informations, lesquelles sont émises par une entité A, à destination d'une entité B, et seront transmises en passant très probablement par des entités intermédiaires.\\
+Le processus peut être variable mais il existe des mécanismes communs à la plupart des moyens de communication : on cherche à décomposer en étapes et les similitudes apparaissent :
+\begin{itemize}
+    \item 	A possède une information « brute » ;
+    \item 	l'information est « conditionnée » pour être envoyée ;
+    \item 	il existe un moyen fiable de savoir comment faire arriver l'information en B ;
+    \item 	en définitive, la transmission s'effectue par un moyen physique ;
+    \item 	du point de vue de B, les choses s'effectuent « à l'envers » : par moyen physique, A a réussi à lui faire parvenir une information « conditionnée » que B traite pour finalement disposer de l'information brute de A.
+\end{itemize}
+
+\subsection{L'exemple du réseau postal}
+Les considérations précédentes sont très abstraites, nous allons donc envisager l'exemple d'une personne A qui souhaite envoyer un cadeau à B. L'information est le cadeau en lui même, le réseau est le réseau postal :
+\begin{center}
+    \includegraphics[width=\textwidth]{ch-reseaux/img/modele_5_couches_poste.png}
+\end{center}
+On a décomposé la communication en 5 couches, auxquelles on a donné des noms \textit{qui sont déjà liés au vocabulaire des réseaux informatiques}. En voici le détail dans l'ordre chronologique:
+\begin{itemize}
+    \item 	\textbf{Du point de vue de A :}
+          \begin{itemize}
+              \item 	\textbf{Couche 5 - Application : } A veut envoyer un cadeau à B ;
+              \item 	\textbf{Couche 4 - Transport :} le cadeau est emballé pour pouvoir être transporté et reçu intact. On y met aussi l'adresse postale de B ;
+              \item 	\textbf{Couche 3 - Réseau :} le bureau  de poste détermine comment acheminer le colis : il a déjà l'adresse postale de B mais il trouve par lui-même la route qu'il fera suivre au colis ;
+              \item 	\textbf{Couche 2 - Lien : } La route est trouvée mais il faut déterminer comment transporter ce colis : si c'est par voie routière on doit savoir quels véhicules capables d'acheminer le cadeau sont disponibles maintenant ou bien quels sont ceux qui le seront très prochainement ;
+              \item	\textbf{Couche 1 - Physique :} c'est le transport effectif du colis.
+          \end{itemize}
+
+    \item 	\textbf{Du point de vue de B :}
+          \begin{itemize}
+              \item	\textbf{Couche 1 - Physique :} c'est également le transport effectif du colis ;
+              \item 	\textbf{Couche 2 - Lien : } le colis arrive au bureau postal ;
+              \item 	\textbf{Couche 3 - Réseau :} le bureau  de poste détermine comment acheminer le colis chez B ;
+              \item 	\textbf{Couche 4 - Transport :} le cadeau est arrivé chez B qui le déballe ;
+              \item 	\textbf{Couche 5 - Application : } B profite de son cadeau.
+          \end{itemize}
+\end{itemize}
+
+L'intérêt de la décomposition en couches est qu'elle sépare un problème complexe en une succession de tâches plus simples. Chaque couche n'interagit directement qu'avec ses couches voisines (ce sont les flèches en trait plein) de manière \textit{relativement simple}. L'interaction de chaque couche chez A avec la couche de même niveau chez B est cependant plus complexe (ce sont les flèches en pointillés).
+
+\begin{itemize}
+    \item 	\textbf{Couche 1 A - Couche 1 B :} c'est le trajet du véhicule qui transporte le cadeau ;
+    \item 	\textbf{Couche 2 A - Couche 2 B :} c'est la planification du trajet ;
+    \item 	\textbf{Couche 3 A - Couche 3 B :} c'est l'envoi du cadeau au niveau postal ;
+    \item 	\textbf{Couche 4 A - Couche 4 B :} c'est la phase emballage/déballage ;
+    \item 	\textbf{Couche 5 A - Couche 5 B :} c'est l'envoi du cadeau de A à B.
+\end{itemize}
+
+
+En général un colis postal est d'un seul tenant mais on peut très bien imaginer que le cadeau que A veut envoyer à B soit très volumineux (par exemple la collection des  romans « Les Rougon-Macquart » d'\'Emile Zola qui comporte 20 livres qui se suivent). Lors de la phase d'emballage, plusieurs « paquets » sont créés et envoyés séparément. B ne les reçoit pas obligatoirement dans l'ordre d'envoi mais ce n'est pas grave car il finit par avoir tous les paquets et remet les romans dans le bon ordre.
+
+\section{Un modèle informatique : TCP/IP}
+
+
+Un ordinateur A veut envoyer des données à un ordinateur B. On supposera que ces données sont \textit{un fichier}. Le processus ressemble à l'exemple précédent. On va présenter le modèle le plus courant dont le nom est TCP/IP et qu'on peut également modéliser avec 5 couches empilées.\\
+On appelle \textit{protocole} tout programme utilisé par une couche.\\
+
+\subsection{Du point de vue de l'émetteur}
+
+Ce qu'il faut retenir c'est que lors de la transmission
+\begin{itemize}
+    \item 	très tôt dans le processus, le fichier est découpé en paquets ;
+    \item 	chaque couche (hormis la couche application) ajoute son propre en-tête aux données reçues par la couche supérieure et destiné à la même couche pour le destinataire. Ce procédé s'appelle \textit{encapsulation}.
+\end{itemize}
+
+	\textbf{Couche 5 - Application :} Cette couche est chargée d'envoyer les données d'un programme sur l'ordinateur A à un programme sur l'ordinateur B. Puisque plusieurs programmes peuvent utiliser la couche transport en même temps, il existe 65536 \textit{ports} et chaque application va utiliser un ou plusieurs ports particuliers. Les numéros de ports sont attribués par convention mais il est possible de les changer.\\
+          Les protocoles les plus connus sont
+          \begin{itemize}
+              \item 	HTTP (\textit{HyperText Transfer Prococol}), protocole de transfert hypertexte, sur le port 80 ou 443 pour sa version sécurisée HTTPS ;
+              \item 	FTP (\textit{File Transfer Protocol}), protocole de transfert de fichiers, sur les ports 20 et 21, et 990 pour sa version sécurisée FTPS ;
+              \item 	SMTP (\textit{Simple Mal Transfer Protocol}), chargé d'envoyer les emails et POP3 (\textit{Post Office Protocol}) de les récupérer ;
+              \item 	DNS (\textit{Domain Name System}), chargé de traduire un nom de site en adresse IP ;
+              \item 	BitTorrent, chargé de récupérer et diffuser des fichiers.
+          \end{itemize}
+
+          \begin{center}
+            \includegraphics[width=10cm]{ch-reseaux/img/modele_5_couches_up.png}\\
+        
+            \footnotesize{Enchaînement des opérations du point de vue de l'émetteur}
+        \end{center}
+
+\textbf{Couche 4 - Transport :} Cette couche va découper les données fournie par la couche 5 en paquets (d'une taille de l'ordre du kilooctet). Elle ajoute également son propre en-tête à chaque paquet.\\
+          Les protocoles les plus connus sont
+          \begin{itemize}
+              \item 	TCP (\textit{Transfert Control Protocol}), protocole de contrôle des transmissions, qui est fiable, fonctionne sur le principe d'une connexion avec accusé de réception.
+              \item 	UDP (\textit{User Datagram Protocol} ), non fiable en théorie, sans connexion ni accusé de réception, mais plus rapide.
+          \end{itemize}
+          On utilise TCP lorsque les données à recevoir sont sensibles (téléchargement d'un fichier). UDP sera préféré dans le cas du \textit{streaming} : le protocole est plus rapide et permet par exemple de visionner un film avec une bonne qualité, et si des données sont perdues, ce n'est pas grave, on passe aux données suivantes, cela ne perturbe pas trop le film (on ne va pas, comme ce serait le cas pour TCP, attendre que les données soient arrivées, et faire des pauses).\\
+
+\textbf{Couche 3 - Réseau :} Cette  couche est responsable de l'aiguillage des paquets vers l'adresse de destination. Elle encapsule les paquets de la couche 4 et y ajoute son propre en-tête (en général un en-tête IP). Du point de vue de cette couche, les paquets sont à envoyer à un ordinateur muni d'une adresse IP (nombre attribué par ce protocole).\\ Pour que les paquets trouvent leur chemin de l'ordinateur A à l'ordinateur B (qui peut être à plusieurs milliers de kilomètres de A), de \textit{protocoles de routage sont utilisés}, les machines dédiées au routage s'appellent des \textit{routeurs}. Un routeur n'utilise que les couches 1,2 et 3 du modèle.\\
+          Il faut retenir que chaque paquet suit son propre chemin, indépendamment des autres et qu'il a un « temps de vie » (pour éviter, s'il est perdu, de circuler sur le réseau pendant des années).\\
+          Parmi les protocoles utilisés par cette couche on trouve
+          \begin{itemize}
+              \item 	IP (\textit{Internet Protocol}), décrit ci-dessus ;
+              \item 	ARP (\textit{Address Resolution Protocol}) qui permet de trouver l'adresse \textit{physique} de l'ordinateur connecté à l'adresse IP. Ce protocole est utilisé lorsque l'information est arrivée à B et « remonte les couches ».\\
+          \end{itemize}
+
+\textbf{Couche 2 - Lien :} Elle est chargée de coordonner le transfert des données ainsi que le « temps de parole » de chaque machine connectée au support physique (si toutes les machines connectées à un même support émettent des données en même temps, il risque d'y avoir des \textit{collisions}). Elle encapsule les paquets de la couche supérieure dans ce qu'on appelle des \textit{trames} (trames Ethernet par exemple).\\
+          Du point de vue de la couche lien, la destination d'un paquet est une adresse physique appelée adresse MAC (Media Access Control), déterminée par la carte réseau de la machine destinataire.
+          Les protocoles utilisés par cette couche sont Ethernet (réseau filaire), Wi-Fi (réseau \textit{via} les ondes.\\
+\textbf{Couche 1 - Physique :} Elle est chargée de la transmission effective des trames (qu'elle encapsule également) d'un bout à l'autre du support physique.
+
+
+\subsection{Du point de vue du récepteur}
+
+Il faut retenir que chaque couche dépaquète le paquet (ou trame) qui lui est adressé en enlevant l'en-tête correspondant et passe le relais à la couche du dessus.
+
+\begin{center}
+    \includegraphics[width=7cm]{ch-reseaux/img/modele_5_couches_down.png}\\
+    \footnotesize{Enchaînement des opérations du point de vue du destinataire}
+\end{center}
+\section{Le matériel}
+
+\subsection{Couche physique }
+
+\subsubsection{Liaison filaire}
+
+\floatpictureright{0.3}{ch-reseaux/img/cable_ethernet}{
+    Les informations peuvent être transmises \textit{via} des câbles. Le plus utilisé est le câble Ethernet. Son nom est UTP-CAT5 ou UTP-CAT6, la différence étant que le second permet un débit dix fois plus grand que le premier ( 1 Gbit/s contre 100 Mbit/s).\\
+    Parmi les autres types de liaisons filaires, on compte la liaison par câble téléphonique (qui permet par exemple de se connecter à Internet par ADSL) et la liaison par câble optique.
+}
+
+\subsubsection{Bluetooth}
+\floatpictureleft{0.15}{ch-reseaux/img/logo_bluetooth.png}{
+    C'est une technologie utilisant les ondes radios pour permettre la communication entre les équipements électroniques (imprimantes, téléphones, scanners, système audio portatif ou dans un véhicule...) à courte distance. Ses fonctionnalités sont assez limitées en terme de mise en réseau.}
+
+\subsubsection{Wi-Fi}
+
+\floatpictureright{0.3}{ch-reseaux/img/logo_wifi}{
+    Cette technologie utilise également les ondes radio. Son nom de norme est IEEE 802.11 et c'est le moyen de transmission des données sans fil le plus utilisé.}
+
+\subsubsection{Répéteur et concentrateur}
+
+Lorsqu'un signal parcourt le support physique, son intensité s'atténue avec la distance. Un \textit{répéteur} régénère le signal perçu avec plus d'intensité pour pallier ce problème.\\
+Le concentrateur (hub) est moins utilisé de nos jours. C'est une version « multiprise » du répéteur : quand il reçoit un signal sur un des ses branchements, il les recopie sur tous les autres branchements sans se soucier de l'éventuel destinataire du signal.
+
+\subsubsection{Carte réseau}
+
+
+\floatpictureleft{0.3}{ch-reseaux/img/carte_reseau}{
+    Que ce soit une clé USB Wi-Fi ou une carte réseau interne, c'est la même chose : ce composant est indispensable pour connecter un ordinateur à un réseau.\\
+    Chaque carte réseau possède une \textit{adresse MAC} : c'est l'adresse physique de la carte, elle permet d'identifier l'ordinateur de manière unique.}
+
+\subsection{Couche lien}
+\floatpictureright{0.3}{ch-reseaux/img/switch}{
+    Le \textit{concentrateur} (\textit{switch} en Anglais) est un équipement à plusieurs branchements (au moins 2) appelés \textit{ports} (ne pas confondre avec la notion de port utilisé par une application).\\
+    Son rôle est de rediriger une trame reçue vers l'ordinateur de destination.}
+
+\subsection{Couche réseau}
+
+\floatpictureleft{0.3}{ch-reseaux/img/routeur}{
+    Le \textit{routeur} (\textit{router} en Anglais) permet d'effectuer le routage des paquets et de les faire transiter d'une partie du réseau vers une autre (par exemple d'un réseau local à un autre, nous verrons cela plus tard).}
+
+
+\subsection{Couches supérieures}
+
+C'est un ordinateur qui exécute les protocoles des couches transport et application. Cela peut être un téléphone, une tablette, un ordinateur portable ou de bureau ou bien encore un objet connecté tel qu'une enceinte Bluetooth.
