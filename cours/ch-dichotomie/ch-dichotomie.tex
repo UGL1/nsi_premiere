@@ -76,6 +76,7 @@ Pour chaque itération on a noté dans un tableau les valeurs des variables (cel
 
 \begin{center}
 	\small
+	\tabularstyled
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
 		\rowcolor{UGLiOrange}{\boxfont\color{white}n° d'itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}valeur renvoyée} \\
@@ -132,7 +133,7 @@ La dernière ligne du tableau signifie qu'au bout de la 3\eme itération, les co
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-			n°itér & gauche & droite & milieu & liste\_triee[milieu] & return ? \\
+			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?}\\
 			\hline
 			       &        &        &        &                      &          \\
 			\hline
@@ -153,7 +154,7 @@ Trois question se posent :
 	\item 	Pourquoi la boucle \textit{tant que} s'arrête-t-elle toujours ?\\ On dit que c'est un problème de \textit{terminaison}.
 	\item 	Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \mintinline{python}{val == liste_triee[m]} ?.\\
 	      C'est un problème de \textit{correction}.
-	\item	Pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?\\ C'est un problème de \textit{complexité}
+	\item	Pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?\\ C'est un problème de \textit{complexité}.
 \end{enumerate}
 
 
@@ -193,7 +194,7 @@ Pour prouver que cette fonction est correcte, on doit utiliser un \textit{invari
 
 Dans notre cas voici l'invariant de boucle :
 \begin{center}
-	P :  si\mintinline{python}{val} est dans \mintinline{python}{liste_triee} son indice ne peut-être qu'entre \mintinline{python}{gauche} et \mintinline{python}{droite}\fg{}
+	P :  si \mintinline{python}{val} est dans \mintinline{python}{liste_triee} son indice ne peut-être qu'entre \mintinline{python}{gauche} et \mintinline{python}{droite}\fg{}
 \end{center}
 
 \begin{itemize}

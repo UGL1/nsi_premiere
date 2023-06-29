@@ -55,9 +55,10 @@
 
 	Dans un système de fichier tel que celui de \textsc{Linux}, la racine se note \texttt{/} et les séparateurs (équivalents des flèches du graphique ci-dessus) aussi.\\
 	Il y a deux manières d'accéder aux fichiers.
+
 	\subsubsection{Chemin absolu}
 	On part de la racine et on écrit le chemin pour arriver à l'objet désiré.\\
-	Ainsi le chemin absolu de l'objet 1 est \texttt{/programme officiel.txt} et celui de l'objet 5 est \texttt{/Evaluations/Contrôles/image.jpg}
+	Ainsi le chemin absolu de l'objet 1 est \texttt{/officiel.txt} et celui de l'objet 5 est \texttt{/Evaluations/Contrôles/image.jpg}
 	
 	\begin{exercice}[]
 		Donner les chemins absolus des autres objets.
@@ -69,7 +70,7 @@
 	On part d'un emplacement précis (à l'intérieur d'un répertoire) et l'on indique le chemin pour aller à l'objet voulu. S'il faut remonter d'un cran dans l'arborescence on utilise na notation \texttt{..} comme ceci :
 	\begin{itemize}
 		\item 	si l'on est dans le répertoire \texttt{Evaluations} et qu'on veut accéder à \texttt{dm2.txt} alors son chemin relatif est \texttt{Devoirs maison/dm2.txt};
-		\item 	si l'on est dans \texttt{Contrôles} et qu'on veut accéder à \texttt{ch1-exercices.txt} alors son chemin relatif est \texttt{../../Chapitre 1/ch1-exercices.txt} car il faut d'abord remonter l'arborescence de 2 crans.
+		\item 	si l'on est dans \texttt{Contrôles} et qu'on veut accéder au exercices du chapitre 1, le chemin relatif est \texttt{../../Chapitre 1/exercices.txt} car il faut d'abord remonter l'arborescence de 2 crans.
 	\end{itemize}
 
 	\begin{exercice}[]
@@ -85,7 +86,6 @@
 	\end{itemize}
 
 	\begin{exercice}[]
-		Faire le début de l'activité \og utiliser le shell\fg{} de M. Quinson.
-
+		Faire l'activité \textit{utiliser le shell}.
 	\end{exercice}
 	

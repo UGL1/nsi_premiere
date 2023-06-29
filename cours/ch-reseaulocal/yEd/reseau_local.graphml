@@ -20,7 +20,7 @@
           <y:Geometry height="41.72100067138672" width="41.71900177001953" x="1351.5611484527587" y="279.13949966430664"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="87.65402221679688" x="-27.732353973388626" y="-36.78417968750003">Internet
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="61.568359375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="171.30804443359375" x="-69.55936508178706" y="-65.568359375">Internet
  (réseau global)<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -41,7 +41,7 @@
           <y:Geometry height="38.0" width="23.0" x="1249.3036241149903" y="535.1504993438721"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="60.333038330078125" x="-18.666519165039062" y="42.0">Téléphone<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="116.66607666015625" x="-46.833038330078125" y="42.0">Téléphone<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -61,7 +61,7 @@
           <y:Geometry height="47.0" width="36.0" x="1707.6" y="276.5"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.4095458984375" x="-11.70477294921875" y="51.0">Enceinte
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="61.568359375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="114.819091796875" x="-39.4095458984375" y="51.0">Enceinte
 connectée<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -82,7 +82,7 @@ connectée<y:LabelModel>
           <y:Geometry height="66.80199432373047" width="65.39840698242188" x="1339.7214458465576" y="386.59900283813477"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="30.699203491210938" y="31.400997161865234">
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="30.699203491210938" y="31.400997161865234">
             <y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -90,7 +90,7 @@ connectée<y:LabelModel>
               <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
             </y:ModelParameter>
           </y:NodeLabel>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="s" textColor="#000000" verticalTextPosition="bottom" visible="true" width="23.5252685546875" x="20.936569213867188" y="70.80199432373047">Box</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="eight_pos" modelPosition="s" textColor="#000000" verticalTextPosition="bottom" visible="true" width="43.050537109375" x="11.173934936523438" y="70.80199432373047">Box</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="false"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="4"/>
@@ -104,7 +104,7 @@ connectée<y:LabelModel>
           <y:Geometry height="58.30099868774414" width="35.78980255126953" x="1002.1050987243652" y="270.84950065612793"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="25.312286376953125" x="5.238758087158203" y="62.30099868774414">NAS<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.62457275390625" x="-5.417385101318359" y="62.30099868774414">NAS<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -124,7 +124,7 @@ connectée<y:LabelModel>
           <y:Geometry height="47.83500289916992" width="56.20465087890625" x="1697.4976745605468" y="530.2329978942871"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.173828125" x="-4.984588623046875" y="51.83500289916992">Imprimante
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="61.568359375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="128.34765625" x="-36.071502685546875" y="51.83500289916992">Imprimante
 Wi-Fi<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -145,7 +145,7 @@ Wi-Fi<y:LabelModel>
           <y:Geometry height="45.56999588012695" width="67.49800109863281" x="986.2509994506836" y="397.2150020599365"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="49.419036865234375" x="9.039482116699219" y="49.56999588012695">Portable<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="94.83807373046875" x="-13.670036315917969" y="49.56999588012695">Portable<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -165,7 +165,7 @@ Wi-Fi<y:LabelModel>
           <y:Geometry height="58.30099868774414" width="51.0" x="1459.4006493377685" y="525.0"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.751953125" x="1.6240234375" y="62.30099868774414">Tablette<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="91.50390625" x="-20.251953125" y="62.30099868774414">Tablette<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -185,7 +185,7 @@ Wi-Fi<y:LabelModel>
           <y:Geometry height="42.9556999206543" width="69.0154037475586" x="1691.0922981262206" y="394.04215003967283"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.4095458984375" x="4.802928924560547" y="46.9556999206543">TV
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="61.568359375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="114.819091796875" x="-22.901844024658203" y="46.9556999206543">TV
 connectée<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -206,7 +206,7 @@ connectée<y:LabelModel>
           <y:Geometry height="53.24563217163086" width="65.0260009765625" x="987.4869995117188" y="527.5276832580566"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.39208984375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="49.6229248046875" x="7.7015380859375" y="57.24563217163086">PC/ MAC<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="95.245849609375" x="-15.10992431640625" y="57.24563217163086">PC/ MAC<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>

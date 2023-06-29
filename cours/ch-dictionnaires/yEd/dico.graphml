@@ -20,7 +20,7 @@
           <y:Geometry height="64.96826171875" width="56.554100036621094" x="4.722949981689453" y="-354.484130859375"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="19.177345275878906">A</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="22.078689575195312" x="-26.078689575195312" y="11.2855224609375">A</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="1"/>
@@ -34,7 +34,7 @@
           <y:Geometry height="64.53585815429688" width="56.554100036621094" x="4.722949981689453" y="95.73207092285156"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="18.961143493652344">F</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="19.390884399414062" x="-23.390884399414062" y="11.069320678710938">F</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="2"/>
@@ -48,7 +48,7 @@
           <y:Geometry height="64.96826171875" width="56.554100036621094" x="4.722949981689453" y="-174.484130859375"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="19.177345275878906">C</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="21.598724365234375" x="-25.598724365234375" y="11.2855224609375">C</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="3"/>
@@ -62,7 +62,7 @@
           <y:Geometry height="64.96826171875" width="56.554996490478516" x="4.722501754760742" y="5.515869140625"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="19.177345275878906">E</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.3828125" x="-24.3828125" y="11.2855224609375">E</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="4"/>
@@ -76,7 +76,7 @@
           <y:Geometry height="64.53585815429688" width="56.554100036621094" x="4.722949981689453" y="-84.26792907714844"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="18.961143493652344">D</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="24.2225341796875" x="-28.2225341796875" y="11.069320678710938">D</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="5"/>
@@ -90,11 +90,11 @@
           <y:Geometry height="64.53585815429688" width="56.554996490478516" x="4.722501754760742" y="-264.26792907714844"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-27.45539726257323" y="18.961143493652344">B<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="23.134613037109375" x="-27.134613037109375" y="11.069320678710938">B<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.5" labelRatioY="0.0" nodeRatioX="-0.5" nodeRatioY="0.0" offsetX="-12.661329879760729" offsetY="0.0" upX="0.0" upY="-1.0"/>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.5" labelRatioY="0.0" nodeRatioX="-0.5" nodeRatioY="0.0" offsetX="-4.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
             </y:ModelParameter>
           </y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
@@ -110,7 +110,7 @@
           <y:Geometry height="64.53585815429688" width="56.554996490478516" x="4.722501754760742" y="190.26792907714844"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="14.7940673828125" x="-18.7940673828125" y="18.961143493652344">G</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="32" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="42.397216796875" horizontalTextPosition="center" iconTextGap="4" modelName="sides" modelPosition="w" textColor="#000000" verticalTextPosition="bottom" visible="true" width="23.774566650390625" x="-27.774566650390625" y="11.069320678710938">G</y:NodeLabel>
           <y:SVGNodeProperties usingVisualBounds="true"/>
           <y:SVGModel svgBoundsPolicy="0">
             <y:SVGContent refid="7"/>
@@ -123,8 +123,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="-295.0"/>
           <y:Fill color="#E0C4D8" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="68.764404296875" x="15.6177978515625" y="11.693214416503906">Tennis<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="73.96954345703125" x="13.015228271484375" y="8.60791015625">Tennis<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -140,8 +140,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="-205.0"/>
           <y:Fill color="#C0D2E3" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="68.764404296875" x="15.6177978515625" y="11.693214416503906">Basket<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.83306884765625" x="12.583465576171875" y="8.60791015625">Basket<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -157,8 +157,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="-115.0"/>
           <y:Fill color="#E8E6D5" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.17626953125" x="26.411865234375" y="11.693214416503906">Foot<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="51.18206787109375" x="24.408966064453125" y="8.60791015625">Foot<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -174,8 +174,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="65.0"/>
           <y:Fill color="#FBE9E2" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.17626953125" x="26.411865234375" y="11.693214416503906">Boxe<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="55.88348388671875" x="22.058258056640625" y="8.60791015625">Boxe<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -191,8 +191,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="-25.0"/>
           <y:Fill color="#F4EDD6" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.17626953125" x="26.411865234375" y="11.693214416503906">Judo<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="52.38140869140625" x="23.809295654296875" y="8.60791015625">Judo<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -208,8 +208,8 @@
         <y:ShapeNode>
           <y:Geometry height="50.0" width="100.0" x="220.0" y="155.0"/>
           <y:Fill color="#F5C7CD" transparent="false"/>
-          <y:BorderStyle color="#000000" raised="false" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Source Code Pro Light" fontSize="18" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="26.613571166992188" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="36.3822021484375" x="31.80889892578125" y="11.693214416503906">Gym<y:LabelModel>
+          <y:BorderStyle hasColor="false" raised="false" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Fira Sans Light" fontSize="24" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.7841796875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="50.41448974609375" x="24.792755126953125" y="8.60791015625">Gym<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>

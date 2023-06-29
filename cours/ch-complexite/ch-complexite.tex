@@ -19,8 +19,8 @@ Voici trois exemples de problèmes qu'on peut vouloir résoudre
 
     Par exemple pour $n$ valant 4, j'obtiens la table suivante :
     \begin{center}
-    \alternaterowcolors%
-    \begin{tabular}{cccc}
+    \tabularstyled
+    \begin{tabular}{c|c|c|c}
     1 & 2 & 3 & 4\\
     2 & 4 & 6 & 8 \\
     3 & 6 & 9 & 12 \\
@@ -66,10 +66,11 @@ En pratique, on ne calcule pas \textit{exactement} $c(n)$. On se contente d'indi
 
 Il est très utile de connaître la complexité d'un algorithme car cela nous permet d'estimer le temps de resolution d'un problème quand on connaît l'ordre de grandeur de $n$ comme le montre le tableau ci-dessous.
 \begin{center}
-\scriptsize\alternaterowcolors%
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{ccccccccc}
 
+\tabularstyled
+\renewcommand{\arraystretch}{1.5}
+\scriptsize
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
 \rowcolor{UGLiOrange}
 & {\boxfont\color{white}5} & {\boxfont\color{white}10} & {\boxfont\color{white}20} & {\boxfont\color{white}50} & {\boxfont\color{white}250} & {\boxfont\color{white}1 000} & {\boxfont\color{white}10 000} & {\boxfont\color{white}1 000 000} \\
 constante & 10 ns & 10 ns & 10 ns & 10 ns & 10 ns & 10 ns & 10 ns & 10 ns \\
@@ -169,26 +170,26 @@ Ici une \textsc{opel} est une multiplication. Pour $n$ fixé, dans tous les cas 
 \begin{exercice}[* : addition de matrices]
    On considère des \textit{matrices}, qui sont représentées par des listes de listes d'\mintinline{python}{int} ($n$ lignes et $n$ colonnes).
    Par exemple les matrices 
-
-   $$M_1 = \begin{pmatrix}
+   \tabulardefault
+   $$M_1 = \begin{matrice}
          1 & 2 & -1\\
          0 & -1 & 2\\
          -1& 1 & 0\\
-   \end{pmatrix}\quad\text{et}\quad M_2 = \begin{pmatrix}
+   \end{matrice}\quad\text{et}\quad M_2 = \begin{matrice}
          -3 & 1 & 0\\
          1 & 0 & -2\\
          1& -1 & 1\\
-   \end{pmatrix}$$
+   \end{matrice}$$
    sont deux matrices carrées d'ordre 3 et sont représentées en \textsc{Python} par \\
    \mintinline{python}{m1 = [[1, 2, -1], [0, -1, 2], [-1, 1, 0]]} et\\
    \mintinline{python}{m2 = [[-3, 1, 0], [1, 0, -2], [1, -1, 1]]}\\
 
    Il est possible d'ajouter 2 matrices de même taille en procédant « case par case »  :
-   $$M_1+M_2 = \begin{pmatrix}
+   $$M_1+M_2 = \begin{matrice}
          -2 & 3 & -1\\
          1 & -1 & 0\\
          0& 0 & 1\\
-   \end{pmatrix}$$
+   \end{matrice}$$
    En convenant qu'une \textsc{opel} est une addition de deux \mintinline{python}{int} , sans écrire l'algorithme, donner la complexité de l'algorithme d'addition de deux matrices.
 \end{exercice}
 \begin{exercice}[* : multiplication de matrices]

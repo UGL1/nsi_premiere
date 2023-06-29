@@ -6,7 +6,7 @@
 Ce sont les \textit{opérateurs de comparaison} :\\
 
 {\small
-\alternaterowcolors
+\tabularstyled
 \begin{tabular}{CCC}
 	\rowcolor{lightgray}
 	\rowcolor{UGLiOrange}{\boxfont\color{white} Opérateur} & {\boxfont\color{white} Signification} & {\boxfont\color{white} Remarques}                                                                     \\
@@ -68,24 +68,24 @@ Ces opérateurs permettent de réaliser des tests basiques. Pour des tests plus 
 	\item   \mintinline{python}{not} est un opérateur de \textit{négation} très utile quand on veut par exemple vérifier qu'une condition est fausse.
 \end{itemize}
 Voici les tables de vérité des deux premiers connecteurs :
-
+\tabularstyled{white}
 \begin{center}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\mintinline{python}{and} & \textit{True}        & \textit{False}       \\
+		\mintinline{python}{and} &\cellcolor{UGLiOrange}{\boxfont\color{white}True}       & \cellcolor{UGLiOrange}{\boxfont\color{white}False}       \\
 		\hline
-		\textit{True}      & \mintinline{python}{True}  & \mintinline{python}{False} \\
+		\cellcolor{UGLiOrange}{\boxfont\color{white}True}      & \mintinline{python}{True}  & \mintinline{python}{False} \\
 		\hline
-		\textit{False}     & \mintinline{python}{False} & \mintinline{python}{False} \\
+		\cellcolor{UGLiOrange}{\boxfont\color{white}False}     & \mintinline{python}{False} & \mintinline{python}{False} \\
 		\hline
 	\end{tabular}\hspace{2em}
 	\begin{tabular}{|c|c|c|}
 		\hline
-		\mintinline{python}{or} & \textit{True}       & \textit{False}       \\
+		\mintinline{python}{or} &\cellcolor{UGLiOrange}{\boxfont\color{white}True}       & \cellcolor{UGLiOrange}{\boxfont\color{white}False}       \\
 		\hline
-		\textit{True}     & \mintinline{python}{True} & \mintinline{python}{True}  \\
+		\cellcolor{UGLiOrange}{\boxfont\color{white}True}      & \mintinline{python}{False}  & \mintinline{python}{True} \\
 		\hline
-		\textit{False}    & \mintinline{python}{True} & \mintinline{python}{False} \\
+		\cellcolor{UGLiOrange}{\boxfont\color{white}False}     & \mintinline{python}{True} & \mintinline{python}{True} \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -110,7 +110,7 @@ Voici les tables de vérité des deux premiers connecteurs :
 \section{if, else et elif}
 Voici le schéma de fonctionnement d'un test \mintinline{python}{if} :
 \begin{center}
-	\includegraphics[height=10cm]{ch-conditions/img/if}
+	\includegraphics[height=8cm]{ch-conditions/img/if}
 \end{center}
 
 \textbf{Attention :} Un bloc conditionnel doit être \textit{tabulé} par rapport à la ligne précédente : il n'y a ni \mintinline{python}{DébutSi}  ni \mintinline{python}{FinSi}
@@ -129,7 +129,7 @@ print(phrase)
 
 Voici le schéma de fonctionnement d'un test \mintinline{python}{if...else} :
 \begin{center}
-	\includegraphics[height=10cm]{ch-conditions/img/ifelse}
+	\includegraphics[height=8cm]{ch-conditions/img/ifelse}
 \end{center}
 
 \begin{pyc}
@@ -236,7 +236,7 @@ On peut bien sûr inclure autant de \mintinline{python}{elif} que nécessaire.
 	\end{center}
 	Construire la table de vérité de \mintinline{python}{nand} en complétant :
 	\begin{center}
-
+		\tabularstyled
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			\rowcolor{UGLiOrange}{\boxfont\color{white} A} & {\boxfont\color{white} B} & {\boxfont\color{white} A and B} & {\boxfont\color{white} not (A and B)} \\
