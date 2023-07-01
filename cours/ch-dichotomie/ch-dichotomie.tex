@@ -12,13 +12,13 @@ Cette démarche peut être améliorée si la liste possède des propriétés par
 On veut écrire une fonction \texttt{recherche\_dichotomique} qui :
 
 En entrée prend \begin{itemize}
-		      \item 	une liste \mintinline{python}{liste_triee} de $n$ entiers \textit{triée dans l'ordre croissant};
-		      \item 	un entier \mintinline{python}{val}.
-	      \end{itemize}
+	\item 	une liste \mintinline{python}{liste_triee} de $n$ entiers \textit{triée dans l'ordre croissant};
+	\item 	un entier \mintinline{python}{val}.
+\end{itemize}
 Renvoie \begin{itemize}
-		      \item 	l'indice de \mintinline{python}{val} dans \mintinline{python}{liste_triee} si \mintinline{python}{val} appartient à \mintinline{python}{liste_triee};
-		      \item 	-1 si a n'appartient pas à \mintinline{python}{liste_triee}.
-	      \end{itemize}
+	\item 	l'indice de \mintinline{python}{val} dans \mintinline{python}{liste_triee} si \mintinline{python}{val} appartient à \mintinline{python}{liste_triee};
+	\item 	-1 si a n'appartient pas à \mintinline{python}{liste_triee}.
+\end{itemize}
 
 
 
@@ -40,29 +40,29 @@ Renvoie \begin{itemize}
 \end{methode}
 Voici l'algorithme traduit en \textsc{Python} :
 \begin{pyc}
-	\begin{minted}{python}
-	def recherche_dichotomique(liste_triee, val):
-		# début de la plage de valeurs à regarder
-		gauche = 0  
-		# fin de la plage
-		droite = len(liste_triee) - 1
-		# tant que la plage est non vide  
-		while gauche <= droite:  
-			# on prend grosso modo le milieu
-			milieu = (gauche + droite) // 2  
-			# si on trouve val au milieu c'est gagné
-			if liste_triee[milieu] == val:
-				return milieu  
-			# si on a dépassé val
-			elif liste_triee[milieu] > val:  
-				# alors on regarde avant
-				droite = milieu - 1  
-			# sinon on regarde après
-			else:
-				gauche = milieu + 1  
-		# si on est sorti de la boucle
-		# c'est qu'on n'a pas trouvé val
-		return -1  
+			\begin{minted}{python}
+01	def recherche_dichotomique(liste_triee, val):
+02		# début de la plage de valeurs à regarder
+03		gauche = 0  
+04		# fin de la plage
+05		droite = len(liste_triee) - 1
+06		# tant que la plage est non vide  
+07		while gauche <= droite:  
+08			# on prend grosso modo le milieu
+09			milieu = (gauche + droite) // 2  
+10			# si on trouve val au milieu c'est gagné
+11			if liste_triee[milieu] == val:
+12				return milieu  
+13			# si on a dépassé val
+14			elif liste_triee[milieu] > val:  
+15				# alors on regarde avant
+16				droite = milieu - 1  
+17			# sinon on regarde après
+18			else:
+19				gauche = milieu + 1  
+20		# si on est sorti de la boucle
+21		# c'est qu'on n'a pas trouvé val
+22		return -1  
 	\end{minted}
 \end{pyc}
 
@@ -81,11 +81,11 @@ Pour chaque itération on a noté dans un tableau les valeurs des variables (cel
 		\hline
 		\rowcolor{UGLiOrange}{\boxfont\color{white}n° d'itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}valeur renvoyée} \\
 		\hline
-		1              & 0      & 7      & 3      & 8                    & NON             \\
+		1                                                     & 0                             & 7                             & 3                             & 8                                           & NON                                    \\
 		\hline
-		2              & 0      & 2      & 1      & 3                    & NON             \\
+		2                                                     & 0                             & 2                             & 1                             & 3                                           & NON                                    \\
 		\hline
-		3              & 2      & 2      & 2      & 4                    & OUI : 2         \\
+		3                                                     & 2                             & 2                             & 2                             & 4                                           & OUI : 2                                \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -93,17 +93,18 @@ Ainsi la fonction a renvoyé 2, indice de la valeur 4 dans la liste, au bout de 
 
 On cherche la valeur 15:
 \begin{center}
+	\tabularstyled
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
 		\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
 		\hline
-		1      & 0      & 7      & 3      & 8                    & NON      \\
+		1                                                  & 0                             & 7                             & 3                             & 8                                           & NON                             \\
 		\hline
-		2      & 4      & 7      & 5      & 13                   & NON      \\
+		2                                                  & 4                             & 7                             & 5                             & 13                                          & NON                             \\
 		\hline
-		3      & 6      & 7      & 2      & 20                   & NON      \\
+		3                                                  & 6                             & 7                             & 2                             & 20                                          & NON                             \\
 		\hline
-		-      & 7      & 6      & -      & -                    & OUI : -1 \\
+		-                                                  & 7                             & 6                             & -                             & -                                           & OUI : -1                        \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -114,53 +115,90 @@ La dernière ligne du tableau signifie qu'au bout de la 3\eme itération, les co
 
 	Complète le tableau (des lignes resteront peut-être vides).
 	\begin{center}
+		\tabularstyled
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
 			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
 		\end{tabular}
 	\end{center}
 
 	On cherche la valeur 21, complète le tableau (des lignes resteront peut-être vides).
 	\begin{center}
+		\tabularstyled
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?}\\
+			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
-			       &        &        &        &                      &          \\
+			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
 		\end{tabular}
 	\end{center}
 \end{exercice}
 \section{Analyse de l'algorithme}
 
-Trois question se posent :
+Quatre questions se posent :
 
 \begin{enumerate}
-	\item 	Pourquoi la boucle \textit{tant que} s'arrête-t-elle toujours ?\\ On dit que c'est un problème de \textit{terminaison}.
-	\item 	Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ? De même quand la fonction renvoie une valeur $m\neq -1$, est-ce que cela veut bien dire que \mintinline{python}{val == liste_triee[m]} ?.\\
+	\item 	Pourquoi, lorsque la fonction renvoie un entier positif, est-ce bien la position de \mintinline{python}{val} dans \mintinline{python}{liste_triee} ?
 	      C'est un problème de \textit{correction}.
-	\item	Pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?\\ C'est un problème de \textit{complexité}.
+	\item 	Quand la fonction renvoie -1, est-ce que cela veut bien dire que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee} ?
+	      C'est un problème de \textit{complétude}.
+	\item 	Pourquoi la boucle \textit{tant que} s'arrête-t-elle toujours ? On dit que c'est un problème de \textit{terminaison}.
+	\item	Enfin, pourquoi cette fonction est-elle plus rapide qu'un parcours des éléments un par un ?
+	      C'est un problème de \textit{complexité}.
 \end{enumerate}
 
+\section{Correction de l'algorithme}
+
+Quand la fonction renvoie un entier positif, c'est à la ligne 12  , ce qui signifie qu'on a effectivement trouvé \mintinline{python}{val} dans \mintinline{python}{liste_triee}, à la position renvoyée.  
+
+
+\section{Complétude de l'algorithme}
+Pour prouver que cette fonction est complète, on doit utiliser un \textit{invariant de boucle}.
+
+\begin{definition}
+	Un \textit{invariant de boucle} est une propriété $\mathcal{P}$ dépendant éventuellement des variables du programme. 
+	\begin{itemize}
+		\item 	$\mathcal{P}$ doit être vraie avant l'entrée dans la boucle ;
+		\item 	$\mathcal{P}$ doit rester vraie à chaque itération de boucle ;
+		\item 	à la fin de la boucle, $\mathcal{P}$ doit nous permettre de conclure que la fonction « fait bien ce qu'elle doit faire ».
+	\end{itemize}
+\end{definition}
+
+Dans notre cas voici l'invariant de boucle :
+\begin{center}
+	$\mathcal{P}$ : « si \mintinline{python}{val} est dans \mintinline{python}{liste_triee} son indice est entre \mintinline{python}{gauche} et \mintinline{python}{droite}»
+\end{center}
+
+\begin{itemize}
+	\item 	avant l'entrée dans la boucle \mintinline{python}{while}, on a\\
+	      \mintinline{python}{gauche == 0} et \mintinline{python}{droite == len(liste_triee) - 1} donc P est trivialement vérifiée ;
+	\item 	dans la boucle, si  \mintinline{python}{liste_triee[milieu] == val} alors on renvoie \mintinline{python}{val} et la fonction s'arrête et donne bien le résultat attendu ;
+	\item   sinon si \mintinline{python}{liste_triee[milieu] > val} alors puisque la liste est triée, la position de \mintinline{python}{val} ne peut être qu'entre \mintinline{python}{gauche} et \mintinline{python}{milieu-1}, or \mintinline{python}{droite} est actualisée avec cette valeur, et P reste vraie ;
+	\item 	de même si \mintinline{python}{liste_triee[milieu] < val} ;
+	\item En sortie de boucle $\mathcal{P}$ est toujours vérifiée et puisque \mintinline{python}{gauche > droite} cela signifie que \mintinline{python}{val} n'est pas dans \mintinline{python}{liste_triee}.  
+\end{itemize}
+
+On a donc prouvé la complétude de notre fonction.
 
 \section{Terminaison}
 
-Pour prouver qu'une boucle \textit{tant que} se termine, \textit{en théorie} on détermine un \textit{variant} de boucle. En pratique on peut parfois faire plus simple.
+Pour prouver qu'une boucle \textit{tant que} se termine, \textit{en théorie} on détermine un \textit{variant} de boucle.
 
 \begin{definition}[]
 	Un variant de boucle est un \textit{entier positif qui décroît strictement à chaque itération de boucle}. On le choisit de sorte à ce que lorsqu'il atteint zéro (ou un, en tout cas une petite valeur) la boucle se termine.\\
@@ -179,44 +217,19 @@ Or lors d'une itération, \mintinline{python}{m} est toujours entre \mintinline{
 Ainsi les valeurs de v décroissent strictement, donc finissent (si on ne trouve pas \texttt{val}) par atteindre zéro et la boucle se termine.\\
 On dit qu'on a prouvé la \textit{terminaison} de la fonction.
 
-\section{Correction}
 
-Pour prouver que cette fonction est correcte, on doit utiliser un \textit{invariant de boucle} (ne pas confondre avec le \textit{variant de boucle}).
-
-\begin{definition}
-	Un \textit{invariant de boucle} est une propriété P dépendant éventuellement des variables du programme.
-	\begin{itemize}
-		\item 	P doit être vraie avant l'entrée dans la boucle \textit{tant que};
-		\item 	P doit rester vraie à chaque itération de boucle;
-		\item 	à la fin de la boucle, P doit nous permettre de conclure que la fonction \og fait bien ce qu'elle doit faire\fg{}.
-	\end{itemize}
-\end{definition}
-
-Dans notre cas voici l'invariant de boucle :
-\begin{center}
-	P :  si \mintinline{python}{val} est dans \mintinline{python}{liste_triee} son indice ne peut-être qu'entre \mintinline{python}{gauche} et \mintinline{python}{droite}\fg{}
-\end{center}
-
-\begin{itemize}
-	\item 	avant l'entrée dans la boucle \mintinline{python}{while}, on a\\
-	      \mintinline{python}{gauche = 0} et \mintinline{python}{droite = len(liste_triee) - 1} donc P est trivialement vérifiée ;
-	\item 	dans la boucle, si  \mintinline{python}{liste_triee[milieu] == val} alors on renvoie \mintinline{python}{val} et la fonction s'arrête et donne bien le résultat attendu ;
-	\item   sinon si \mintinline{python}{liste_triee[milieu] > val} alors puisque la liste est triée, la position de \mintinline{python}{val} ne peut être qu'entre \mintinline{python}{gauche} et \mintinline{python}{milieu-1}, or \mintinline{python}{droite} est actualisée avec cette valeur, et P reste vraie ;
-	\item 	de même si \mintinline{python}{liste_triee[milieu] < val}.
-\end{itemize}
-En sortie de boucle on a \mintinline{python}{gauche > droite}. Supposons que \mintinline{python}{val} appartienne à la liste, alors puisque l'invariant de boucle P est vrai y compris à la fin de la boucle, cela veut dire que \mintinline{python}{val} doit être entre \mintinline{python}{gauche} et \mintinline{python}{droite} mais c'est absurde puisque\\  \mintinline{python}{gauche > droite}. Donc notre supposition est fausse : \mintinline{python}{val} n'appartient pas à la liste\footnote{Ceci s'appelle un \textit{raisonnement par l'absurde.}}.\\
-
-On a donc prouvé la correction de notre fonction.
 
 \section{Complexité}
 
 On va ici évaluer le nombre d'étapes nécessaires au déroulement de la fonction. On va raisonner dans le pire des cas : \mintinline{python}{val} n'appartient pas à la liste.
 
-Sans détailler les calculs\footnote{Peux-tu le faire ?}, à chaque itération de boucle, \mintinline{python}{droite - gauche + 1} (nombre de valeurs qui restent à examiner) est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle : \mintinline{python}{droite == gauche} et on est sûr ou bien de trouver \mintinline{python}{val} à cet endroit, ou bien on sort de la boucle.\\
+À chaque itération de boucle, le nombre de valeurs qui restent à examiner) est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle et on est sûr ou bien de trouver \mintinline{python}{val} à cet endroit, ou bien on sort de la boucle et on renvoie \mintinline{python}{-1} .\\
 
-Ainsi, pour une liste de longueur 2 on est sûrs d'arriver au résultat en 2 itérations, pour une liste de longueur 4, en 3 itérations et en généralisant, si la liste est de longueur $2^n$, en $n+1$ itérations.\\
+Ainsi, pour une liste triée de taille $n$, le nombre d'itérations de la boucle dans le pire des cas, c'est le plus petit entier $k$ tel que $2^k$ dépasse $n$.\\
 
-Par exemple pour un tableau de longueur 1000, puisque $2^9<1000<2^{10}$, on est sûr d'arriver au résultat au plus en 10 itérations.\\
+Pour une liste de longueur 2 on est sûrs d'arriver au résultat en 2 itérations, pour une liste de longueur 4, en 3 itérations et en généralisant, si la liste est de longueur $2^n$, en $n+1$ itérations.\\
+
+Pour un tableau de longueur 1000, puisque $2^9<1000<2^{10}$, on est sûr d'arriver au résultat au plus en 10 itérations.\\
 
 \begin{definition}[]
 	Soit $n$ un entier naturel non nul, on appelle \textit{logarithme en base 2} de $n$ l'unique réel $x$ solution de $$2^x=n$$
@@ -226,7 +239,7 @@ Par exemple pour un tableau de longueur 1000, puisque $2^9<1000<2^{10}$, on est 
 \end{definition}
 
 Ce que l'on vient de prouver, c'est que pour une liste de taille $n$, la fonction\\
-\mintinline{python}{recherche_dichotomique} nécessitera au plus $E(\log_2(n))+1$ itérations pour déterminer si oui ou non une valeur appartient à cette liste ($E$ représente la fonction \textit{partie entière}).\\
+\mintinline{python}{recherche_dichotomique} nécessitera au plus $E (\log_2(n))+1$ itérations pour déterminer si oui ou non une valeur appartient à cette liste ($E$ représente la fonction \textit{partie entière}).\\
 
 \begin{propriete}
 	Soit une liste triée de longueur $n\in\N^*$.\\
@@ -236,3 +249,11 @@ Ce que l'on vient de prouver, c'est que pour une liste de taille $n$, la fonctio
 \end{propriete}
 
 Pour cette raison la complexité de l'algorithme de recherche dichotomique est dite \textit{logarithmique}. C'est bien mieux que celle de la recherche simple.
+
+\begin{exercice}[ : efficacité de l'algorithme]
+	\begin{enumerate}
+		\item Dans une liste triée de taille \np{10000}, en combien d'étapes l'algorithme de recherche dichotomique s'arrête-t-il \textit{dans le pire des cas} ? 
+		\item Même question pour une liste de taille \np{100000} et pour une liste de taille \np{1000000}.
+	\end{enumerate}
+	
+\end{exercice}
