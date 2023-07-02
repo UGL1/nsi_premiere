@@ -79,7 +79,7 @@ Pour chaque itération on a noté dans un tableau les valeurs des variables (cel
 	\tabularstyled
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		\rowcolor{UGLiOrange}{\boxfont\color{white}n° d'itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}valeur renvoyée} \\
+		\rowcolor{UGLiOrange}{\thsn° d'itér} & {\thsgauche} & {\thsdroite} & {\thsmilieu} & {\thsliste\_triee[milieu]} & {\thsvaleur renvoyée} \\
 		\hline
 		1                                                     & 0                             & 7                             & 3                             & 8                                           & NON                                    \\
 		\hline
@@ -96,7 +96,7 @@ On cherche la valeur 15:
 	\tabularstyled
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
+		\rowcolor{UGLiOrange}{\thsn°itér} & {\thsgauche} & {\thsdroite} & {\thsmilieu} & {\thsliste\_triee[milieu]} & {\thsreturn ?} \\
 		\hline
 		1                                                  & 0                             & 7                             & 3                             & 8                                           & NON                             \\
 		\hline
@@ -118,7 +118,7 @@ La dernière ligne du tableau signifie qu'au bout de la 3\eme itération, les co
 		\tabularstyled
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
+			\rowcolor{UGLiOrange}{\thsn°itér} & {\thsgauche} & {\thsdroite} & {\thsmilieu} & {\thsliste\_triee[milieu]} & {\thsreturn ?} \\
 			\hline
 			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
@@ -136,7 +136,7 @@ La dernière ligne du tableau signifie qu'au bout de la 3\eme itération, les co
 		\tabularstyled
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
-			\rowcolor{UGLiOrange}{\boxfont\color{white}n°itér} & {\boxfont\color{white}gauche} & {\boxfont\color{white}droite} & {\boxfont\color{white}milieu} & {\boxfont\color{white}liste\_triee[milieu]} & {\boxfont\color{white}return ?} \\
+			\rowcolor{UGLiOrange}{\thsn°itér} & {\thsgauche} & {\thsdroite} & {\thsmilieu} & {\thsliste\_triee[milieu]} & {\thsreturn ?} \\
 			\hline
 			                                                   &                               &                               &                               &                                             &                                 \\
 			\hline
@@ -223,7 +223,7 @@ On dit qu'on a prouvé la \textit{terminaison} de la fonction.
 
 On va ici évaluer le nombre d'étapes nécessaires au déroulement de la fonction. On va raisonner dans le pire des cas : \mintinline{python}{val} n'appartient pas à la liste.
 
-À chaque itération de boucle, le nombre de valeurs qui restent à examiner) est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle et on est sûr ou bien de trouver \mintinline{python}{val} à cet endroit, ou bien on sort de la boucle et on renvoie \mintinline{python}{-1} .\\
+À chaque itération de boucle, le nombre de valeurs qui restent à examiner est au moins divisé par 2 et lorsque  cette valeur vaut 1, c'est qu'on est à la dernière itération de boucle et on est sûr ou bien de trouver \mintinline{python}{val} à cet endroit, ou bien on sort de la boucle et on renvoie \mintinline{python}{-1} .\\
 
 Ainsi, pour une liste triée de taille $n$, le nombre d'itérations de la boucle dans le pire des cas, c'est le plus petit entier $k$ tel que $2^k$ dépasse $n$.\\
 

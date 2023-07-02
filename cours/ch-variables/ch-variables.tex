@@ -5,17 +5,17 @@
 En mathématiques, le symbole $=$ a plusieurs significations
 \begin{itemize}
 	\item dans $2+2=4$, on peut comprendre $=$ comme un opérateur d'évaluation : $2+2$, cela « donne » $4$ ;
-	\item dans $\mathcal{P}=2\times(\ell+L)$, on peut considérer que $=$ sert à définir ce qu'est le périmètre d'un rectangle de dimensions $\ell$ et $L$ ; 
+	\item dans $\mathcal{P}=2\times(\ell+L)$, on peut considérer que $=$ sert à définir ce qu'est le périmètre d'un rectangle de dimensions $\ell$ et $L$ ;
 	\item dans $3x + 2 = 4x +5$, le $=$ sert à convenir que les 2 membres ont la même valeur et on cherche s'il existe un ou des nombres $x$ qui satisfont l'égalité (appelée équation) ;
-	\item \textit{et cætera}. 
+	\item \textit{et cætera}.
 \end{itemize}
 
 En \textsc{Python}, le symbole \mintinline{python}{=}  n'a qu'un seul sens : il sert à l'\textit{affectation}.
 
 \section{L'affectation}
-Il s'agit de « stocker » une valeur dans un endroit de la mémoire auquel \textsc{Python} donne un nom\footnote{En réalité c'est plus compliqué mais cela ne nous intéresse pas.}. Voici un exemple d'affectation : 
+Il s'agit de « stocker » une valeur dans un endroit de la mémoire auquel \textsc{Python} donne un nom\footnote{En réalité c'est plus compliqué mais cela ne nous intéresse pas.}. Voici un exemple d'affectation :
 \begin{center}\Large
-\mintinline{python}{a = 2}
+	\mintinline{python}{a = 2}
 \end{center}\
 \begin{itemize}
 	\item   \mintinline{python}{2} est une \textit{valeur} de type \mintinline{python}{int} ;
@@ -27,18 +27,18 @@ Au cours d'un programme la valeur associée à une variable peut change\ldots D'
 
 
 \begin{definition}[ : affectation]
-Lors d'une affectation
-\begin{itemize}
-	\item d'abord \textsc{Python} évalue ce qu'il y a à droite du symbole \mintinline{python}{=} ;
-	\item ensuite il affecte cette valeur à la variable qui figure à gauche du symbole \mintinline{python}{=} ;
-	\item si la variable n'existe pas déjà, elle est créée automatiquement ;
-	\item le type de la variable, c'est le type de la valeur qu'on lui affecte. 
-\end{itemize}
+	Lors d'une affectation
+	\begin{itemize}
+		\item d'abord \textsc{Python} évalue ce qu'il y a à droite du symbole \mintinline{python}{=} ;
+		\item ensuite il affecte cette valeur à la variable qui figure à gauche du symbole \mintinline{python}{=} ;
+		\item si la variable n'existe pas déjà, elle est créée automatiquement ;
+		\item le type de la variable, c'est le type de la valeur qu'on lui affecte.
+	\end{itemize}
 \end{definition}
 Que fait le programme suivant ?
 
 \begin{pyc}
-\begin{minted}{python}
+	\begin{minted}{python}
 x = 0
 x = x + 1
 print(x)    
@@ -52,16 +52,16 @@ print(x)
 \end{itemize}
 
 \begin{aretenir}
-En mathématiques, $x = x + 1$ est une équation sans solution.\\
+	En mathématiques, $x = x + 1$ est une équation sans solution.\\
 
-En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augmenter la valeur de \mintinline{python}{x} de 1 (on dit aussi \textit{incrémenter}).
+	En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augmenter la valeur de \mintinline{python}{x} de 1 (on dit aussi \textit{incrémenter}).
 \end{aretenir}
 
 \subsection{Affectations multiples}
 \textsc{Python} permet d'affecter plusieurs valeurs à plusieurs variables en même temps.
 
-\begin{pys}\begin{minted}{python}
->>> a, b= 10, 2
+\begin{pyc}\begin{minted}{python}
+>>> a, b = 10, 2
 >>> a
 10
 
@@ -76,12 +76,12 @@ En \textsc{Python}, l'instruction \mintinline{python}{x = x + 1} sert à augment
 10
 
 \end{minted}
-\end{pys}
+\end{pyc}
 
 \subsection{Notation condensée}
 On est souvent amené à écrire des instructions telles que  \mintinline{python}{a = a + 1} ou \mintinline{python}{b = b / 2}. Cela peut être lourd quand les variables ne s'appellent
 pas \mintinline{python}{a} ou \mintinline{python}{b} mais \mintinline{python}{rayon_sphere} ou \mintinline{python}{largeur_niveau}. On peut utiliser les notation suivantes :
-\begin{pys}\begin{minted}{python}
+\begin{pyc}\begin{minted}{python}
 >>> rayon_sphere = 3.4
 >>> rayon_sphere /= 2
 >>> rayon_sphere
@@ -92,6 +92,84 @@ pas \mintinline{python}{a} ou \mintinline{python}{b} mais \mintinline{python}{ra
 >>> largeur_niveau
 20
 \end{minted}
-\end{pys}
+\end{pyc}
 
 On dispose également de \mintinline{python}{*=}, \mintinline{python}{//=}, \mintinline{python}|%=|, \mintinline{python}{-=} et \mintinline{python}{**=}.
+
+\section{Le cas des variables de type str ou list}
+
+\subsection{Les str}
+
+Les valeurs de type \mintinline{python}{str} sont composées de caractères \emph{alphanumériques}. On peut accéder à chacun d'eux de la manière suivante :
+\begin{pyc}\begin{minted}{python}
+>>> chaine = 'Bonjour !'
+>>> chaine[0]
+'B'
+>>> chaine[5]
+'u'
+\end{minted}
+\end{pyc}
+
+Voici comment \textsc{Python} représente  la chaîne précédente :
+
+\begin{center}
+	\alternaterowcolors
+	\tabularstyled
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\rowcolor{UGLiOrange}\ths i    & \ths 0 & \ths 1 & \ths 2 & \ths 3 & \ths 4 & \ths 5 & \ths 6 & \ths 7 & \ths 8 \\
+		\hline
+		\mintinline{python}{chaine[i]} & B      & o      & n      & j      & o      & u      & r      &        & !      \\
+		\hline
+	\end{tabular}
+\end{center}
+
+On a parfois besoin de connaître la longueur (\emph{length} en anglais) d'une chaîne de caractères :
+
+\begin{pyc}\begin{minted}{python}
+>>> chaine = 'onzelettres'
+>>> len(chaine)
+11
+\end{minted}
+\end{pyc}
+
+On peut aussi accéder facilement au dernier (ou à l'avant dernier) caractère d'une variable de type \mintinline{python}{str} :
+
+\begin{pyc}
+	\begin{minted}{python}
+>>> a = "M'enfin ?!"
+>>> a[-1]
+'!'
+
+>>> a[-2]
+'?'
+\end{minted}
+\end{pyc}
+
+\subsection{Les list}
+
+Cela se passe un peu comme pour les \mintinline{python}{str}
+
+\begin{pyc}
+	\begin{minted}{python}
+		>>> lst = [3, 4, 8]
+		>>> lst[1] # élément d'indice 1 de lst
+		4
+
+		>>> lst[-1] # dernier élément de lst
+		8
+
+		>>> len(lst)
+		3
+	\end{minted}
+\end{pyc}
+
+Lorsqu'on essaie d'accéder à un élément dont l'indice est supérieur ou égal à la longueur de la liste, on obtient une erreur. Dans l'exemple précédent si on évalue \mintinline{python}{lst[3]} on obtient :
+\color{UGLiRed}
+\begin{verbatim}
+IndexError: list index out of range	
+\end{verbatim}
+\color{black}
+
+Une étude détaillée des \mintinline{python}{list} est faite au chapitre \ref{ch:listes}.
+
