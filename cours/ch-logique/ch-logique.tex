@@ -20,13 +20,13 @@ C'est un opérateur \textbf{unaire} : il ne prend qu'une seule variable booléen
 \tabularstyled
 \begin{figure}[H]
     \begin{center}
+        \tabstyle[UGLiBlue]
         \begin{tabular}{|c|c|}
-            \hline\rowcolor{UGLiOrange}
-            {\boxfont\color{white}x} & {\boxfont\color{white}\textit{non} x} \\
+            \ccell x & \ccell \textit{non} x \\
             \hline
-            0                        & 1                                     \\
+            0        & 1                     \\
             \hline
-            1                        & 0                                     \\
+            1        & 0                     \\
             \hline
         \end{tabular}
         \hspace{3em}
@@ -52,17 +52,17 @@ C'est un opérateur \textbf{binaire} : il prend deux variables booléennes en en
 
 \begin{figure}[H]
     \begin{center}
+        \tabstyle[UGLiBlue]
         \begin{tabular}{|c|c|c|}
-            \hline\rowcolor{UGLiOrange}
-            {\boxfont\color{white}x} & {\boxfont\color{white}y} & {\boxfont\color{white}x\textit{et} y} \\
+            \ccell x & \ccell y & \ccell x\textit{et} y \\
             \hline
-            0                        & 0                        & 0                                     \\
+            0        & 0        & 0                     \\
             \hline
-            0                        & 1                        & 0                                     \\
+            0        & 1        & 0                     \\
             \hline
-            1                        & 0                        & 0                                     \\
+            1        & 0        & 0                     \\
             \hline
-            1                        & 1                        & 1                                     \\
+            1        & 1        & 1                     \\
             \hline
         \end{tabular}
         \hspace{3em}
@@ -85,18 +85,17 @@ C'est également un opérateur \textbf{binaire}.
 
 \begin{figure}[H]
     \begin{center}
+        \tabstyle[UGLiBlue]
         \begin{tabular}{|c|c|c|}
-            \hline\rowcolor{UGLiOrange}
-            {\boxfont\color{white}x} & {\boxfont\color{white}y} & {\boxfont\color{white}x\textit{ou} y} \\
-
+            \ccell x & \ccell y & \ccell x\textit{ou} y \\
             \hline
-            0                        & 0                        & 0                                     \\
+            0        & 0        & 0                     \\
             \hline
-            0                        & 1                        & 1                                     \\
+            0        & 1        & 1                     \\
             \hline
-            1                        & 0                        & 1                                     \\
+            1        & 0        & 1                     \\
             \hline
-            1                        & 1                        & 1                                     \\
+            1        & 1        & 1                     \\
             \hline
         \end{tabular}\hspace{3em}
         \tikz{\draw (0,0) node[european or port]{};}
@@ -126,32 +125,31 @@ fonctions \textit{non} et \textit{ou} (on peut même n'utiliser qu'une seule fon
         \item 		Les expressions booléennes not(A and B) et (not A) or (not B) sont équivalentes.\\
               Pour le prouver il suffit de vérifier que leurs tables de vérité sont les mêmes : on fait varier les valeurs de A et de B selon toutes les possibilités et on regarde le résultat de chaque expression.
               \begin{center}
+                  \tabstyle[UGLiBlue]
                   \begin{tabular}{|c|c|c|c|}
-                      \hline\rowcolor{UGLiOrange}
-                      {\boxfont\color{white}
-                      A} & {\boxfont\color{white}B} & {\boxfont\color{white}A and B} & {\boxfont\color{white}not (A and B)} \\
+                      \ccell A & \ccell B & \ccell A and B & \ccell not (A and B)        \\
                       \hline
-                      0  & 0                        & 0                              & \cellcolor{UGLiOrange!25}	1          \\
+                      0        & 0        & 0              & \cellcolor{UGLiOrange!10}	1 \\
                       \hline
-                      0  & 1                        & 0                              & \cellcolor{UGLiOrange!25}	1          \\
+                      0        & 1        & 0              & \cellcolor{UGLiOrange!10}	1 \\
                       \hline
-                      1  & 0                        & 0                              & \cellcolor{UGLiOrange!25}	1          \\
+                      1        & 0        & 0              & \cellcolor{UGLiOrange!10}	1 \\
                       \hline
-                      1  & 1                        & 1                              & \cellcolor{UGLiOrange!25}	0          \\
+                      1        & 1        & 1              & \cellcolor{UGLiOrange!10}	0 \\
                       \hline
                   \end{tabular}\\[2em]
 
                   \begin{tabular}{|c|c|c|c|c|}
-                      \hline\rowcolor{UGLiOrange}
-                      {\boxfont\color{white}A} & {\boxfont\color{white}B} & {\boxfont\color{white}not A} & {\boxfont\color{white}not B} & {\boxfont\color{white}(not A) or (not B)} \\
+
+                      \ccell A & \ccell B & \ccell not A & \ccell not B & \ccell (not A) or (not B)    \\
                       \hline
-                      0                        & 0                        & 1                            & 1                            & \cellcolor{UGLiOrange!25}	1               \\
+                      0        & 0        & 1            & 1            & \cellcolor{UGLiOrange!10}	1  \\
                       \hline
-                      0                        & 1                        & 1                            & 0                            & \cellcolor{UGLiOrange!25}	1               \\
+                      0        & 1        & 1            & 0            & \cellcolor{UGLiOrange!10}	1  \\
                       \hline
-                      1                        & 0                        & 0                            & 1                            & \cellcolor{UGLiOrange!25}	1               \\
+                      1        & 0        & 0            & 1            & \cellcolor{UGLiOrange!10}	1  \\
                       \hline
-                      1                        & 1                        & 0                            & 0                            & \cellcolor{UGLiOrange!25}  0              \\
+                      1        & 1        & 0            & 0            & \cellcolor{UGLiOrange!10}  0 \\
                       \hline
                   \end{tabular}
               \end{center}
@@ -192,25 +190,26 @@ fonctions \textit{non} et \textit{ou} (on peut même n'utiliser qu'une seule fon
 Il s'agit d'une fonction très importante : soient A, B et C trois variables logiques, alors m(A,B,C)=B si A vaut 0 et C si A vaut 1.\\ m permet
 donc de sélectionner B ou C suivant la valeur de A. Voici la table de valeurs de m :
 \begin{center}
+    \tabstyle[UGLiBlue]
     \begin{tabular}{|c|c|c|c|}
-        \hline\rowcolor{UGLiOrange}
-        {\boxfont\color{white}A} & {\boxfont\color{white}B} & {\boxfont\color{white}C} & {\boxfont\color{white}m(A,B,C)} \\
+
+        \ccell A & \ccell B & \ccell C & \ccell m(A, B, C) \\
         \hline
-        0                        & 0                        & 0                        & 0                               \\
+        0        & 0        & 0        & 0                 \\
         \hline
-        0                        & 0                        & 1                        & 0                               \\
+        0        & 0        & 1        & 0                 \\
         \hline
-        0                        & 1                        & 0                        & 1                               \\
+        0        & 1        & 0        & 1                 \\
         \hline
-        0                        & 1                        & 1                        & 1                               \\
+        0        & 1        & 1        & 1                 \\
         \hline
-        1                        & 0                        & 0                        & 0                               \\
+        1        & 0        & 0        & 0                 \\
         \hline
-        1                        & 0                        & 1                        & 1                               \\
+        1        & 0        & 1        & 1                 \\
         \hline
-        1                        & 1                        & 0                        & 0                               \\
+        1        & 1        & 0        & 0                 \\
         \hline
-        1                        & 1                        & 1                        & 1                               \\
+        1        & 1        & 1        & 1                 \\
         \hline
     \end{tabular}
 \end{center}
@@ -271,9 +270,10 @@ Le circuit logique modélisant m est le suivant :
     Pour chiffrer un message, une méthode, dite du masque jetable, consiste à le combiner avec une chaîne de caractères de longueur comparable.
     Une implémentation possible utilise l’opérateur \texttt{XOR} (ou exclusif) dont voici la table de vérité :
     \begin{center}
+        \tabstyled
         \begin{tabular}{|c|c|c|}
             \hline
-            \rowcolor{UGLiOrange} {\boxfont\color{white}a} & {\boxfont\color{white}b} & {\boxfont\color{white}a XOR b} \\
+            \ccell a &\ccell b &\ccell a XOR b \\
             \hline
             0                                              & 0                        & 0                              \\
             \hline
@@ -296,15 +296,15 @@ Le circuit logique modélisant m est le suivant :
               \end{center}
               \begin{enumalph}
                   \item 	Le message \texttt{m} correspond à deux caractères codés chacun sur 8 bits : déterminer quels sont ces caractères. On fournit pour cela la table ci-dessous qui associe à l’écriture hexadécimale d’un octet le caractère correspondant. \\[.5em]
-                        \begin{center}
-                            \includegraphics[width=10cm]{ch-logique/img/ascii}\\
-                        \end{center}
-                        \textit{\footnotesize Exemple de lecture : le caractère correspondant à l’octet codé \texttt{4A} en hexadécimal est la lettre \texttt{J}.}\\
+                  \begin{center}
+                      \includegraphics[width=10cm]{ch-logique/img/ascii}\\
+                  \end{center}
+                  \textit{\footnotesize Exemple de lecture : le caractère correspondant à l’octet codé \texttt{4A} en hexadécimal est la lettre \texttt{J}.}\\
                   \item Pour chiffrer le message d’Alice, on réalise l’opération \texttt{XOR} bit à bit avec la clé suivante :
-                        \begin{center}
-                            \texttt{k = 0b 1110 1110 1111 0000}
-                        \end{center}
-                        Donner l’écriture binaire du message obtenu.
+                  \begin{center}
+                      \texttt{k = 0b 1110 1110 1111 0000}
+                  \end{center}
+                  Donner l’écriture binaire du message obtenu.
               \end{enumalph}
 
         \item 	\begin{enumalph}

@@ -35,13 +35,12 @@ Puisqu'il n'y a que deux chiffres en binaire, compter est simple mais nécessite
 10 :\\
 
 \begin{center}
-    \alternaterowcolors
+    \renewcommand{\arraystretch}{1.2}
+    \tabstyle[UGLiBlue]
     \begin{tabular}{CCCCCCCCCCC}
-
-        \textbf{\'Ecriture décimale} & 0 & 1 & 2  & 3  & 4   & 5   & 6   & 7   & 8    & \dots \\
-
-        \textbf{\'Ecriture binaire}  & 0 & 1 & 10 & 11 & 100 & 101 & 110 & 111 & 1000 & \dots \\
-    \end{tabular} \\[1em]
+        \ccell\'Ecriture décimale & 0 & 1 & 2  & 3  & 4   & 5   & 6   & 7   & 8    & \dots \\\hline
+        \ccell\'Ecriture binaire  & 0 & 1 & 10 & 11 & 100 & 101 & 110 & 111 & 1000 & \dots \\
+    \end{tabular}
 \end{center}
 
 \begin{notation}
@@ -65,8 +64,8 @@ Tout entier naturel admet une unique écriture décimale (c'est-à-dire en base 
 
     \alternaterowcolors
     \begin{tabular}{CCCC}
-        Chiffre binaire & 1     & 1     & 0     \\
-        Valeur          & $2^2$ & $2^1$ & $2^0$ \\
+        \ccell Chiffre binaire & 1     & 1     & 0     \\\hline
+        \ccell Valeur          & $2^2$ & $2^1$ & $2^0$ \\
     \end{tabular}\ \ \ et on obtient $6=0\times 2^0+1\times 2^1+1\times 2^2$.
 \end{exemple}
 
@@ -75,8 +74,8 @@ Tout entier naturel admet une unique écriture décimale (c'est-à-dire en base 
     \begin{center}
         \alternaterowcolors[UGLiPurple]
         \begin{tabular}{CCCCCC}
-            Chiffre binaire & 1     & 1     & 1     & 0     & 1     \\
-            Valeur          & $2^4$ & $2^3$ & $2^2$ & $2^1$ & $2^0$ \\
+            \ccell Chiffre binaire & 1     & 1     & 1     & 0     & 1     \\\hline
+            \ccell Valeur          & $2^4$ & $2^3$ & $2^2$ & $2^1$ & $2^0$ \\
         \end{tabular}
     \end{center}
     \begin{tabbing}
