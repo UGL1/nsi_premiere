@@ -99,33 +99,32 @@ Voici les tableaux décrivant deux encodages :
 
 Au fil du temps une multitude d'encodages sont apparus, multipliant les sources de confusion.\\
 Voici pour l'exemple une partie des encodages que \textsc{Python} reconnaît :
-\tabularstyled
+\tabstyle[UGLiBlue]
 \begin{center}
-    {\tiny
-        \begin{tabular}{CCC}
-            
-            \rowcolor{UGLiOrange}{\boxfont\color{white}Encodage} & {\boxfont\color{white}Alias Python}                                      & {\boxfont\color{white}Langues concernées}             \\
-            
-            ascii                                                & 646,us-ascii                                                             & English                                               \\
-            big5                                                 & big5-tw, csbig5                                                          & Traditional Chinese                                   \\
-            cp424                                                & EBCDIC-CP-HE, IBM424                                                     & Hebrew                                                \\
-            cp437                                                & 437, IBM437                                                              & English                                               \\
-            cp500                                                & EBCDIC-CP-BE, EBCDIC-CP-CH, IBM500                                       & Western Europe                                        \\
-            cp720                                                &                                                                          & Arabic                                                \\
-            cp737                                                &                                                                          & Greek                                                 \\
-            cp856                                                &                                                                          & Hebrew                                                \\
-            cp857                                                & 857, IBM857                                                              & Turkish                                               \\
-            cp864                                                & IBM864                                                                   & Arabic                                                \\
-            cp874                                                &                                                                          & Thai                                                  \\
-            cp932                                                & 932, ms932, mskanji, ms-kanji                                            & Japanese                                              \\
-            cp1251                                               & windows-1251                                                             & Bulgarian, Byelorussian, Macedonian, Russian, Serbian \\
-            cp1258                                               & windows-1258                                                             & Vietnamese                                            \\
-            euc\_kr                                              & euckr, korean, ksc5601, ks\_c-5601, ks\_c-5601-1987, ksx1001, ks\_x-1001 & Korean                                                \\
-            gbk                                                  & 936, cp936, ms936                                                        & Unified Chinese                                       \\
-            latin\_1                                             & iso-8859-1, iso8859-1, 8859, cp819, latin, latin1, L1                    & West Europe                                           \\
-            iso8859\_14                                          & iso-8859-14, latin8, L8                                                  & Celtic languages                                      \\
-            koi8\_r                                              &                                                                          & Russian                                               \\
-            utf\_8                                               & U8, UTF, utf8                                                            & all languages                                         \\
+    {\scriptsize
+        \begin{tabular}{cll}
+
+            \ccell  Encodage & \ccell  Alias Python                                   & \ccell  Langues concernées                             \\
+            ascii           & 646,us-ascii                                          & English                                               \\
+            big5            & big5-tw, csbig5                                       & Traditional Chinese                                   \\
+            cp424           & EBCDIC-CP-HE, IBM424                                  & Hebrew                                                \\
+            cp437           & 437, IBM437                                           & English                                               \\
+            cp500           & EBCDIC-CP-BE, EBCDIC-CP-CH, IBM500                    & Western Europe                                        \\
+            cp720           &                                                       & Arabic                                                \\
+            cp737           &                                                       & Greek                                                 \\
+            cp856           &                                                       & Hebrew                                                \\
+            cp857           & 857, IBM857                                           & Turkish                                               \\
+            cp864           & IBM864                                                & Arabic                                                \\
+            cp874           &                                                       & Thai                                                  \\
+            cp932           & 932, ms932, mskanji, ms-kanji                         & Japanese                                              \\
+            cp1251          & windows-1251                                          & Bulgarian, Byelorussian, Macedonian, Russian, Serbian \\
+            cp1258          & windows-1258                                          & Vietnamese                                            \\
+            euc\_kr         & euckr, korean, ksc5601, ks\_c-5601, ks\_c-5601-1987   & Korean                                                \\
+            gbk             & 936, cp936, ms936                                     & Unified Chinese                                       \\
+            latin\_1        & iso-8859-1, iso8859-1, 8859, cp819, latin, latin1, L1 & West Europe                                           \\
+            iso8859\_14     & iso-8859-14, latin8, L8                               & Celtic languages                                      \\
+            koi8\_r         &                                                       & Russian                                               \\
+            utf\_8          & U8, UTF, utf8                                         & all languages                                         \\
         \end{tabular}}
 \end{center}
 
@@ -200,18 +199,18 @@ Pour les autres, on procède comme ceci :
     \item  En fonction du nombre de bits nécessaires pour représenter en binaire  cet index, on utilise le codage suivant :\\
 
           \begin{center}
-              {\scriptsize
+              {\footnotesize
                   \begin{tabular}{CCC}
 
-                      \rowcolor{UGLiOrange}{\boxfont\color{white}Nombre de bits de l'index} & {\boxfont\color{white}Nombre d'octets pour coder en UTF-8} & {\boxfont\color{white}Schéma de codage}                                     \\
+                      \ccell  Nombre de bits de l'index & \ccell  Nombre d'octets pour coder en UTF-8 & \ccell  Schéma de codage                                                     \\
 
-                      de 0 à 7                                                              & 1                                                          & 0xxx xxxx                                                                   \\
+                      de 0 à 7                         & 1                                          & 0xxx xxxx                                                                   \\
 
-                      de 8 à 11                                                             & 2                                                          & \textbf{110}x xxxx \textbf{10}xx xxxx                                       \\
+                      de 8 à 11                        & 2                                          & \textbf{110}x xxxx \textbf{10}xx xxxx                                       \\
 
-                      de 12 à 16                                                            & 3                                                          & \textbf{1110} xxxx \textbf{10}xx xxxx \textbf{10}xx xxxx                    \\
+                      de 12 à 16                       & 3                                          & \textbf{1110} xxxx \textbf{10}xx xxxx \textbf{10}xx xxxx                    \\
 
-                      de 17 à 21                                                            & 4                                                          & \textbf{1111 0}xxx \textbf{10}xx xxxx \textbf{10}xx xxxx \textbf{10}xx xxxx \\
+                      de 17 à 21                       & 4                                          & \textbf{1111 0}xxx \textbf{10}xx xxxx \textbf{10}xx xxxx \textbf{10}xx xxxx \\
                   \end{tabular} }
               \normalsize
           \end{center}
